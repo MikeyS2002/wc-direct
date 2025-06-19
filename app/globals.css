@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #f1f3f5;
+    --primary: #8ab2ee;
+    --font-montserrat: "montserrat", sans-serif;
+    --font-bebas: "bebas", sans-serif;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-primary: var(--primary);
+    --font-montserrat: var(--font-montserrat);
+    --font-bebas: var(--font-bebas);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@layer components {
+    * {
+        -webkit-font-smoothing: antialiased;
+        @apply font-montserrat focus:outline-none;
+    }
+    body {
+        @apply bg-background;
+    }
+    .h1 {
+        @apply text-[40px] md:text-[100px] tracking-[0.01em] leading-[110%];
+    }
+    .h2 {
+        @apply font-bebas text-[40px] tracking-[0.05em] leading-[110%];
+    }
+    p,
+    .body {
+        @apply text-[14px] md:text-[16px] tracking-[0.01em];
+    }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: "bebas";
+    src: url("/fonts/BebasNeue-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "montserrat";
+    src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "montserrat";
+    src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 600;
 }

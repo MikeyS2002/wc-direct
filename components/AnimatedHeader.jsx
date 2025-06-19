@@ -16,7 +16,14 @@ const AnimatedHeader = () => {
 
     return (
         <div className="m-5 md:m-10 mt-20 md:mt-10">
-            <h1 className="h1 w-[66%]">Schoon en fris sanitair voor </h1>
+            <h1 className="sr-only">
+                Schoon en fris sanitair voor de bouw, evenementen, particulier
+                en elk project - Professionele sanitairoplossingen voor alle
+                sectoren
+            </h1>
+            <span className="h1 block w-[66%]">
+                Schoon en fris sanitair voor{" "}
+            </span>
             <div className="overflow-y-hidden relative h-[44px] md:h-[110px]">
                 <AnimatePresence>
                     <motion.span
@@ -25,7 +32,7 @@ const AnimatedHeader = () => {
                         animate={{ y: 0 }}
                         exit={{ y: "-100%" }}
                         transition={{
-                            duration: 0.5,
+                            duration: 0.3,
                             ease: "easeOut",
                         }}
                         className="h1 absolute top-0 left-0 whitespace-nowrap"

@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const TextWithButtons = ({ title, text }) => {
     return (
-        <article className="mt-20 md:mt-40 mb-40 md:mb-60 max-w-260 mx-auto px-5 md:px-10">
-            <h2 className="h2 mb-10 text-center ">{title}</h2>
-            <p className="text-center">{text}</p>
+        <article className="mt-20 md:mt-40 mb-20 md:mb-60 max-w-260 mx-auto px-5 md:px-10">
+            <h2 className="h2 mb-5 md:mb-10 md:text-center ">{title}</h2>
+            <p className="md:text-center">{text}</p>
             <div className="mt-10 relative">
                 <Link href="bestellen">
                     <button className="button mb-5 block cursor-pointer bg-black md:absolute left-[calc(50%+20px)]">

@@ -32,7 +32,10 @@ export default function Home() {
     return (
         <main className="">
             <AnimatedHeader />
-            <SideText />
+            <SideText
+                header="Sanitaire voorzieningen voor elk project"
+                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
+            />
             <Blocks />
             <TextImage
                 img="/images/bedrijf.jpg"

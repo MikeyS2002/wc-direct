@@ -21,7 +21,7 @@ const AnimatedHeader = () => {
                 en elk project - Professionele sanitairoplossingen voor alle
                 sectoren
             </h1>
-            <span className="h1 block w-[66%]">
+            <span className="h1 block md:w-[66%]">
                 Schoon en fris sanitair voor{" "}
             </span>
             <div className="overflow-y-hidden relative h-[44px] md:h-[110px]">

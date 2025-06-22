@@ -22,7 +22,7 @@ const FAQ = ({ questions }) => {
     }, [openIndex]);
 
     return (
-        <section className="px-10 w-[calc(100%-500px)]">
+        <section className="px-5 md:px-10 my-20 md:my-40 lg:w-[calc(100%-520px)]">
             <h3 className="h2 pb-5">Veelgestelde vragen</h3>
             {questions.map((faq, i) => (
                 <div
@@ -30,7 +30,7 @@ const FAQ = ({ questions }) => {
                     key={i}
                 >
                     <h5
-                        className="large cursor-pointer"
+                        className="large cursor-pointer select-none"
                         onClick={() => toggleFAQ(i)}
                     >
                         {faq.question}

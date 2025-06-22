@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const Blocks = () => {
     return (
-        <section className="grid grid-cols-2 gap-5 mx-10">
-            <div>
+        <section className="md:grid grid-cols-2 gap-5 mx-5 mb-20 md:mb-40 md:mx-10">
+            <div className="md:mb-0 mb-5">
                 <div className="aspect-video w-full">
                     <Image
                         src="/images/bedrijf.jpg"

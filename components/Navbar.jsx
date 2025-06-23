@@ -21,7 +21,7 @@ const Navbar = () => {
             </ul>
             <button className="bg-[#8ab2ee] body m-2 gap-2 px-2 rounded py-1 ">
                 <Link
-                    href="/offerte"
+                    href="/bestellen"
                     className="flex flex-nowrap gap-1 wrap-break-word whitespace-nowrap"
                 >
                     <span>Offerte</span>

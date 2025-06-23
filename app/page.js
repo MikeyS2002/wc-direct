@@ -31,7 +31,13 @@ const questions = [
 export default function Home() {
     return (
         <main className="">
-            <AnimatedHeader />
+            <AnimatedHeader
+                seoH1=" Schoon en fris sanitair voor de bouw, evenementen, particulier
+                en elk project - Professionele sanitairoplossingen voor alle
+                sectoren"
+                text="Schoon en fris sanitair voor"
+                words={["de bouw", "evenementen", "particulier", "elk project"]}
+            />
             <SideText
                 header="Sanitaire voorzieningen voor elk project"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."

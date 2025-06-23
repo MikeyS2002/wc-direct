@@ -14,9 +14,17 @@ const Blocks = () => {
                         height={500}
                     />
                 </div>
-                <div className="mt-2">
-                    <h3 className="h2">Voor bedrijven</h3>
-                    <p className="opacity-50">Vraag direct een offerte aan</p>
+                <div className="flex justify-between mt-2">
+                    <div>
+                        <h3 className="h2">Voor bedrijven</h3>
+                        <p className="opacity-50">
+                            Vraag direct een offerte aan
+                        </p>
+                    </div>
+                    <p className="text-right">
+                        €150 eerste week <br />
+                        €50 vervolgweken
+                    </p>
                 </div>
             </div>
             <div>
@@ -29,9 +37,15 @@ const Blocks = () => {
                         height={500}
                     />
                 </div>
-                <div className=" mt-2">
-                    <h3 className="h2">Voor particulieren</h3>
-                    <p className="opacity-50">Betaal direct</p>
+                <div className="flex justify-between mt-2">
+                    <div>
+                        <h3 className="h2">Voor particulieren</h3>
+                        <p className="opacity-50">Betaal direct</p>
+                    </div>
+                    <p className="text-right">
+                        €150 eerste week <br />
+                        €50 vervolgweken
+                    </p>
                 </div>
             </div>
         </section>

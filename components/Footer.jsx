@@ -90,6 +90,9 @@ const Footer = () => {
                         <Link href="/mobiele-toilet-huren-hoorn">
                             <li>Hoorn</li>
                         </Link>
+                        <Link href="/mobiele-toilet-huren-zaandam">
+                            <li>Zaandam</li>
+                        </Link>
                     </ul>
                 </div>
             </footer>

@@ -16,6 +16,7 @@ export default function Hoorn() {
                 words={[
                     "Hoorn",
                     "Purmerend",
+                    "Zaandam",
                     "Alkmaar",
                     "Amsterdam",
                     "heel Noord-Holland",

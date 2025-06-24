@@ -5,28 +5,28 @@ import Link from "next/link";
 const Blocks = () => {
     const services = [
         {
-            href: "/mobiele-toilet-bedrijven",
+            href: "/mobiele-toilet",
             imageSrc: "/images/bedrijf.jpg",
             imageAlt:
                 "Mobiele toilet verhuur voor bedrijven - professionele sanitaire voorzieningen op bouwplaatsen",
             title: "Mobiele Toilet Verhuur voor Bedrijven",
             description:
                 "Professionele sanitaire oplossingen voor bouwplaatsen, kantoren en bedrijfsevenementen",
-            cta: "Vraag direct een offerte aan",
+            cta: "Vraag een offerte",
             pricing: {
                 first: "€150 eerste week",
                 subsequent: "€50 vervolgweken",
             },
         },
         {
-            href: "/mobiele-toilet-huren-particulier",
+            href: "/mobiele-toilet",
             imageSrc: "/images/particulier.jpg",
             imageAlt:
                 "Mobiele toilet verhuur voor particulieren - schone toiletten voor tuinfeesten en evenementen",
             title: "Mobiele Toilet Verhuur voor Particulieren",
             description:
                 "Hygiënische toiletoplossingen voor bruiloften, feesten en privé-evenementen",
-            cta: "Bestel direct online",
+            cta: "Betaal direct",
             pricing: {
                 first: "€150 eerste week",
                 subsequent: "€50 vervolgweken",
@@ -63,7 +63,7 @@ const Blocks = () => {
                                 priority={index === 0}
                             />
                         </div>
-                        <div className="flex justify-between mt-2">
+                        <div className="md:flex justify-between mt-2">
                             <div className="flex-1">
                                 <h3 className="h2">
                                     {service.title
@@ -71,20 +71,24 @@ const Blocks = () => {
                                         .slice(-2)
                                         .join(" ")}
                                 </h3>
-                                <p className="opacity-50 text-sm md:text-base">
+                                <div
+                                    className="text-left whitespace-nowrap flex-shrink-0"
+                                    aria-label={`Prijzen: ${service.pricing.first}, ${service.pricing.subsequent}`}
+                                >
+                                    <p className="whitespace-nowrap">
+                                        <span>{service.pricing.first}</span>
+                                        <br />
+                                        <span>
+                                            {service.pricing.subsequent}
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <Link href={service.href} className="block">
+                                <button className="md:block cursor-pointer hidden button bg-primary h-fit">
                                     {service.cta}
-                                </p>
-                            </div>
-                            <div
-                                className="text-right flex-shrink-0"
-                                aria-label={`Prijzen: ${service.pricing.first}, ${service.pricing.subsequent}`}
-                            >
-                                <p className="whitespace-nowrap">
-                                    <span>{service.pricing.first}</span>
-                                    <br />
-                                    <span>{service.pricing.subsequent}</span>
-                                </p>
-                            </div>
+                                </button>
+                            </Link>
                         </div>
                     </Link>
                 </article>

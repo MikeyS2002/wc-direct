@@ -16,6 +16,7 @@ export default function Amsterdam() {
                 words={[
                     "Amsterdam",
                     "Purmerend",
+                    "Zaandam",
                     "Alkmaar",
                     "Hoorn",
                     "heel Noord-Holland",

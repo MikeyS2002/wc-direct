@@ -72,8 +72,8 @@ const PDP = () => {
 
     return (
         <section className="lg:flex">
-            <div className="w-full flex overflow-x-scroll flex-nowrap lg:grid lg:grid-cols-2 gap-1 h-fit mt-1 ml-1 scrollbar-hide">
-                <div className="min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
+            <div className="w-full flex overflow-x-scroll flex-nowrap lg:grid lg:grid-cols-2 gap-1 h-fit mt-1 ml-1">
+                <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
                     <Image
                         src="/images/toilet1.png"
                         alt="alt"
@@ -84,7 +84,7 @@ const PDP = () => {
                         itemProp="image"
                     />
                 </div>
-                <div className="min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
+                <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
                     <Image
                         src="/images/toilet2.png"
                         alt="alt"
@@ -93,7 +93,7 @@ const PDP = () => {
                         className="w-full h-full object-contain xl:px-30 xl:p-20 p-10"
                     />
                 </div>
-                <div className="min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
+                <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
                     <Image
                         src="/images/toilet3.png"
                         alt="alt"
@@ -104,9 +104,8 @@ const PDP = () => {
                 </div>
             </div>
             <div className="lg:min-w-[560px] lg:mt-[150px] mt-5 text-center lg:max-w-[560px] pl-5 pr-10">
-                {/* Reviews met structured data */}
                 <a
-                    className="flex items-center cursor-pointer underline underline-offset-4 gap-2 justify-center mb-10"
+                    className="flex items-center cursor-pointer w-fit mx-auto underline underline-offset-4 gap-2 justify-center mb-10"
                     itemScope
                     itemType="https://schema.org/AggregateRating"
                     target="_blank"

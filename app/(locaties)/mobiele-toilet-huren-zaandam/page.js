@@ -7,18 +7,18 @@ import TextWithButtons from "@/components/TextWithButtons";
 import SocialProof from "@/components/SocialProof";
 import TextImage from "@/components/TextImage";
 
-export default function Alkmaar() {
+export default function Zaandam() {
     return (
         <main>
             <AnimatedHeader
-                seoH1="Schoon sanitair in Alkmaar - Professionele mobiele toilleten"
+                seoH1="Schoon sanitair in Zaandam - Professionele mobiele toilleten"
                 text="Schoon en fris sanitair in"
                 words={[
-                    "Alkmaar",
-                    "Purmerend",
                     "Zaandam",
                     "Amsterdam",
                     "Hoorn",
+                    "Alkmaar",
+                    "Purmerend",
                     "heel Noord-Holland",
                 ]}
             />

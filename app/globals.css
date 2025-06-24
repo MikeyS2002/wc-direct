@@ -34,7 +34,7 @@
         @apply font-bebas text-[32px] tracking-[0.05em] leading-[110%];
     }
     .h4 {
-        @apply font-bebas text-[64px] tracking-[0.05em] leading-[110%];
+        @apply font-bebas  text-[40px] md:text-[64px] tracking-[0.05em] leading-[110%];
     }
     .large {
         @apply text-[18px] md:text-[20px] tracking-[0.01em];

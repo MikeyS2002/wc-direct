@@ -15,6 +15,7 @@ export default function Purmerend() {
                 text="Schoon en fris sanitair in"
                 words={[
                     "Purmerend",
+                    "Zaandam",
                     "Amsterdam",
                     "Hoorn",
                     "Alkmaar",

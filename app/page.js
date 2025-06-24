@@ -1,7 +1,6 @@
 import AnimatedHeader from "@/components/AnimatedHeader";
 import Blocks from "@/components/Blocks";
 import FAQ from "@/components/FAQ";
-import Services from "@/components/Services";
 import SideText from "@/components/SideText";
 import TextImage from "@/components/TextImage";
 

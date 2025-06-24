@@ -10,13 +10,34 @@ const Footer = () => {
             <footer className="bg-black p-5 md:p-10  text-white md:flex justify-between">
                 <div className="flex flex-col mb-10 md:mb-0 justify-between gap-5">
                     <p>WC-Direct</p>
-                    <p>
-                        Kvk: 92591558
-                        <br />
-                        Nummer: 0650928799
-                        <br />
-                        Email: info@dryveverhuur.nl
-                    </p>
+                    <address className="not-italic">
+                        <div className="space-y-1">
+                            <div>
+                                <span>KvK:</span>
+                                <span className="ml-1">92591558</span>
+                            </div>
+                            <div>
+                                <span>Telefoon:</span>
+                                <a
+                                    href="tel:0650928799"
+                                    className="ml-1 hover:underline rounded"
+                                    aria-label="Bel ons op 06 50928799"
+                                >
+                                    06 50928799
+                                </a>
+                            </div>
+                            <div>
+                                <span>E-mail:</span>
+                                <a
+                                    href="mailto:info@dryveverhuur.nl"
+                                    className="ml-1 hover:underline rounded"
+                                    aria-label="Stuur ons een e-mail"
+                                >
+                                    info@dryveverhuur.nl
+                                </a>
+                            </div>
+                        </div>
+                    </address>
                 </div>
                 <div className="lg:w-[800px] gap-5 flex-wrap flex justify-between">
                     <ul className="space-y-2 ">

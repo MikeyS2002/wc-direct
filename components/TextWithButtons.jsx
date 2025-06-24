@@ -7,12 +7,12 @@ const TextWithButtons = ({ title, text }) => {
             <h2 className="h2 mb-5 md:mb-10 md:text-center ">{title}</h2>
             <p className="md:text-center">{text}</p>
             <div className="mt-10 relative">
-                <Link href="bestellen">
+                <Link href="/bestellen">
                     <button className="button mb-5 block cursor-pointer bg-black md:absolute left-[calc(50%+20px)]">
                         Bestel gelijk
                     </button>
                 </Link>
-                <Link href="mobiel-toillet">
+                <Link href="/mobiele-toilet">
                     <button className="button block cursor-pointer bg-primary md:absolute md:-translate-x-full  left-[calc(50%-20px)]">
                         Zie meer details
                     </button>

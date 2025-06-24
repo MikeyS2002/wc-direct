@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="fixed flex w-[calc(100%-40px)] md:min-w-[500px] md:max-w-[500px] items-center  z-40 justify-between md:top-10 top-5 right-5 md:right-10 text-white bg-black rounded-lg">
             <ul className="flex justify-between w-full mx-2">
                 <li className="body ml-2">
-                    <Link href="/mobiele-toiletten-huren-bouw">Bouw</Link>
+                    <Link href="/mobiele-toiletten-huren-bouw">Home</Link>
                 </li>
                 <li className="body">
                     <Link href="/mobiele-toiletten-huren-evenementen">

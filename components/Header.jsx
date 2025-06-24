@@ -14,6 +14,7 @@ const Header = ({ text, img, alt }) => {
                     className="object-contain w-full"
                     width={2000}
                     height={1000}
+                    sizes="100vw"
                 />
             </header>
         </>

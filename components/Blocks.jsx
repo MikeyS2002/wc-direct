@@ -84,11 +84,11 @@ const Blocks = () => {
                                     </p>
                                 </div>
                             </div>
-                            <Link href={service.href} className="block">
-                                <button className="md:block cursor-pointer hidden button bg-primary h-fit">
+                            <div className="md:block hidden">
+                                <button className="cursor-pointer button bg-primary h-fit">
                                     {service.cta}
                                 </button>
-                            </Link>
+                            </div>
                         </div>
                     </Link>
                 </article>

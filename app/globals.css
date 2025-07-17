@@ -6,6 +6,7 @@
     --contrast: #dfe5ef;
     --font-montserrat: "montserrat", sans-serif;
     --font-bebas: "bebas", sans-serif;
+    --rdp-range_start-color: #8ab2ee;
 }
 
 @theme inline {
@@ -65,4 +66,30 @@
     font-family: "montserrat";
     src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
     font-weight: 600;
+}
+
+.rdp-range_middle {
+    background-color: #8ab2ee !important;
+}
+.rdp-range_end .rdp-day_button {
+    background-color: #3479e2 !important;
+    border-radius: none !important;
+}
+.rdp-range_end {
+    background: linear-gradient(
+        to right,
+        #8ab2ee 50%,
+        transparent 50%
+    ) !important;
+}
+.rdp-range_start {
+    background: linear-gradient(
+        to left,
+        #8ab2ee 50%,
+        transparent 50%
+    ) !important;
+}
+
+.rdp-range_start .rdp-day_button {
+    background-color: #3479e2 !important;
 }

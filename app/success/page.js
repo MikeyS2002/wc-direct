@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function Success() {
+function SuccessContent() {
     const searchParams = useSearchParams();
     const sessionId = searchParams.get("session_id");
     const [orderDetails, setOrderDetails] = useState(null);
@@ -90,18 +90,35 @@ export default function Success() {
                 )}
 
                 <div className="space-y-3">
-                    <Link href="/bestellen">
+                    <Link href="/offerte">
                         <button className="w-full bg-black button">
                             Nieuwe bestelling plaatsen
                         </button>
                     </Link>
                     <Link href="/">
-                        <button className="w-full bg-gray-200 text-black mt-2 button">
+                        <button className="w-full bg-gray-200 text-gray-800 button mt-2">
                             Terug naar homepage
                         </button>
                     </Link>
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function Success() {
+    return (
+        <Suspense
+            fallback={
+                <div className="min-h-screen flex items-center justify-center">
+                    <div className="text-center">
+                        <h1 className="text-2xl font-bold mb-4">Laden...</h1>
+                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900 mx-auto"></div>
+                    </div>
+                </div>
+            }
+        >
+            <SuccessContent />
+        </Suspense>
     );
 }

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Logo = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -37,19 +38,21 @@ const Logo = () => {
 
     return (
         <div className="fixed top-10 left-10 z-50 md:block hidden">
-            <Image
-                width={140}
-                height={100}
-                src="/images/logo.png"
-                alt="WC-Direct logo"
-                className={`relative z-50 transition-transform duration-500 ease-out ${
-                    shouldAnimate
-                        ? isScrolled
-                            ? "transform translate-y-0"
-                            : "transform -translate-y-[300px]"
-                        : "transform translate-y-0"
-                }`}
-            />
+            <Link href="/">
+                <Image
+                    width={140}
+                    height={100}
+                    src="/images/logo.png"
+                    alt="WC-Direct logo"
+                    className={`relative z-50 transition-transform duration-500 ease-out ${
+                        shouldAnimate
+                            ? isScrolled
+                                ? "transform translate-y-0"
+                                : "transform -translate-y-[300px]"
+                            : "transform translate-y-0"
+                    }`}
+                />
+            </Link>
         </div>
     );
 };

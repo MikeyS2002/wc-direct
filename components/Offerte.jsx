@@ -5,11 +5,18 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
 import { nl } from "react-day-picker/locale";
 import Image from "next/image";
+import { loadStripe } from "@stripe/stripe-js";
+
+// Initialize Stripe
+const stripePromise = loadStripe(
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
+);
 
 const Offerte = () => {
     const [selected, setSelected] = useState();
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [isStripeLoading, setIsStripeLoading] = useState(false);
     const [formData, setFormData] = useState({
         type: "",
         naam: "",
@@ -21,11 +28,34 @@ const Offerte = () => {
     });
     const [errors, setErrors] = useState({});
     const [submitStatus, setSubmitStatus] = useState(null);
+    const [maxVoorraad, setMaxVoorraad] = useState(5);
 
     const datePickerRef = useRef(null);
 
-    // Maximum aantal toiletten voor directe betaling
-    const MAX_TOILETTEN_DIRECT = 5;
+    // Fetch maximum voorraad from API
+    useEffect(() => {
+        const fetchMaxVoorraad = async () => {
+            try {
+                const response = await fetch(
+                    `${process.env.NEXT_PUBLIC_API_URL}/voorraad`,
+                    {
+                        headers: {
+                            Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_API_KEY}`,
+                            "Content-Type": "application/json",
+                        },
+                    }
+                );
+                if (response.ok) {
+                    const data = await response.json();
+                    setMaxVoorraad(data.data.maximum_voorraad);
+                }
+            } catch (error) {
+                console.error("Error fetching voorraad:", error);
+            }
+        };
+
+        fetchMaxVoorraad();
+    }, []);
 
     const calculateWeeks = () => {
         if (!selected?.from) return 0;
@@ -35,19 +65,17 @@ const Offerte = () => {
             ? new Date(selected.to)
             : new Date(selected.from);
 
-        // Bereken het aantal dagen
         const timeDiff = endDate.getTime() - startDate.getTime();
         const daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24)) + 1;
 
-        // Bereken aantal weken (elke begonnen week telt als hele week)
         return Math.ceil(daysDiff / 7);
     };
 
     const calculatePricePerToilet = () => {
         const weeks = calculateWeeks();
         if (weeks === 0) return 0;
-        if (weeks === 1) return 150; // Eerste week
-        return 150 + (weeks - 1) * 50; // Eerste week + vervolgweken
+        if (weeks === 1) return 150;
+        return 150 + (weeks - 1) * 50;
     };
 
     const calculateTotal = () => {
@@ -56,11 +84,10 @@ const Offerte = () => {
         return aantal * prijsPerToilet;
     };
 
-    // Bepaal welke knoppen getoond moeten worden
     const shouldShowDirectPayment = () => {
         return (
             formData.type === "particulier" &&
-            parseInt(formData.aantal || 0) <= MAX_TOILETTEN_DIRECT
+            parseInt(formData.aantal || 0) <= maxVoorraad
         );
     };
 
@@ -93,7 +120,6 @@ const Offerte = () => {
             [name]: value,
         }));
 
-        // Clear error when user starts typing
         if (errors[name]) {
             setErrors((prev) => ({
                 ...prev,
@@ -126,7 +152,102 @@ const Offerte = () => {
         return Object.keys(newErrors).length === 0;
     };
 
+    const handleStripePayment = async () => {
+        if (!validateForm()) {
+            setSubmitStatus({
+                type: "error",
+                message: "Alle velden zijn verplicht",
+            });
+            return;
+        }
+
+        setIsStripeLoading(true);
+        setSubmitStatus(null);
+
+        try {
+            const stripe = await stripePromise;
+
+            const requestData = {
+                formData,
+                selected,
+                total: calculateTotal(),
+                weeks: calculateWeeks(),
+            };
+
+            console.log("Sending request data:", requestData);
+
+            // Create checkout session
+            const response = await fetch("/api/create-checkout-session", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(requestData),
+            });
+
+            console.log("Response status:", response.status);
+            console.log("Response ok:", response.ok);
+
+            // Check if response is ok before trying to parse JSON
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("API Error Response:", errorText);
+                throw new Error(`API Error: ${response.status} - ${errorText}`);
+            }
+
+            // Check if response has content
+            const responseText = await response.text();
+            console.log("Raw response:", responseText);
+
+            if (!responseText) {
+                throw new Error("Empty response from server");
+            }
+
+            let responseData;
+            try {
+                responseData = JSON.parse(responseText);
+            } catch (parseError) {
+                console.error("JSON Parse Error:", parseError);
+                throw new Error("Invalid JSON response from server");
+            }
+
+            console.log("Parsed response:", responseData);
+
+            if (responseData.error) {
+                throw new Error(responseData.error);
+            }
+
+            if (!responseData.sessionId) {
+                throw new Error("No session ID received from server");
+            }
+
+            // Redirect to Stripe Checkout
+            const { error: stripeError } = await stripe.redirectToCheckout({
+                sessionId: responseData.sessionId,
+            });
+
+            if (stripeError) {
+                throw new Error(stripeError.message);
+            }
+        } catch (error) {
+            console.error("Stripe payment error:", error);
+            setSubmitStatus({
+                type: "error",
+                message:
+                    error.message ||
+                    "Er is een fout opgetreden bij de betaling.",
+            });
+        } finally {
+            setIsStripeLoading(false);
+        }
+    };
+
     const handleSubmit = async (type) => {
+        if (type === "direct") {
+            await handleStripePayment();
+            return;
+        }
+
         if (!validateForm()) {
             setSubmitStatus({
                 type: "error",
@@ -144,9 +265,7 @@ const Offerte = () => {
                 van: selected.from.toISOString(),
                 tot: selected.to ? selected.to.toISOString() : null,
                 prijs: calculateTotal(),
-                remark: `Bestelling via ${
-                    type === "direct" ? "directe betaling" : "offerte aanvraag"
-                }. Periode: ${calculateWeeks()} week${
+                remark: `Bestelling via offerte aanvraag. Periode: ${calculateWeeks()} week${
                     calculateWeeks() !== 1 ? "s" : ""
                 }`,
             };
@@ -164,10 +283,7 @@ const Offerte = () => {
             if (response.ok) {
                 setSubmitStatus({
                     type: "success",
-                    message:
-                        type === "direct"
-                            ? `Bestelling #${result.bestellingId} is geplaatst! Je ontvangt een bevestiging per e-mail.`
-                            : `Offerte aanvraag #${result.bestellingId} is verzonden! Je ontvangt binnenkort een offerte per e-mail.`,
+                    message: `Offerte aanvraag #${result.bestellingId} is verzonden! Je ontvangt binnenkort een offerte per e-mail.`,
                 });
 
                 // Reset form
@@ -214,7 +330,7 @@ const Offerte = () => {
     }, []);
 
     return (
-        <main className="grid h-[100lvh] md:grid-cols-2 relative pb-10 md:pb-0">
+        <main className="grid h-[100lvh] md:grid-cols-2 relative">
             <div className="mx-5 md:mx-10 mt-20 md:mt-10 flex flex-col sticky top-10 h-fit">
                 <div className="space-y-2">
                     <h1 className="h4 mb-10">Uw gegevens</h1>
@@ -228,7 +344,7 @@ const Offerte = () => {
                                 name="type"
                                 value={formData.type}
                                 onChange={handleInputChange}
-                                className={`input w-full`}
+                                className={`input w-full `}
                                 required
                             >
                                 <option value="" disabled>
@@ -253,7 +369,7 @@ const Offerte = () => {
                                 value={formData.naam}
                                 onChange={handleInputChange}
                                 placeholder="Naam"
-                                className={`input w-full`}
+                                className={`input w-full `}
                                 required
                             />
                         </div>
@@ -385,20 +501,22 @@ const Offerte = () => {
                         <button
                             className="button bg-black w-full disabled:opacity-50 disabled:cursor-not-allowed"
                             onClick={() => handleSubmit("direct")}
-                            disabled={isLoading}
+                            disabled={isLoading || isStripeLoading}
                         >
-                            {isLoading ? "Bezig..." : "Betaal direct"}
+                            {isStripeLoading
+                                ? "Naar betaling..."
+                                : "Betaal direct"}
                         </button>
                     )}
 
                     <button
-                        className={`button ${
+                        className={`${
                             shouldShowDirectPayment()
-                                ? "bg-black/10 text-black"
+                                ? "bg-black/10 text-black "
                                 : "bg-black"
-                        }  w-full disabled:opacity-50 disabled:cursor-not-allowed`}
+                        } button w-full disabled:opacity-50 disabled:cursor-not-allowed`}
                         onClick={() => handleSubmit("offerte")}
-                        disabled={isLoading}
+                        disabled={isLoading || isStripeLoading}
                     >
                         {isLoading ? "Bezig..." : "Vraag een offerte aan"}
                     </button>
@@ -433,8 +551,8 @@ const Offerte = () => {
                         {formData.aantal || 0} toilet
                         {(parseInt(formData.aantal) || 0) !== 1 ? "ten" : ""}
                         {calculateWeeks() > 0
-                            ? ` - ${calculateWeeks()} week${
-                                  calculateWeeks() !== 1 ? "s" : ""
+                            ? ` - ${calculateWeeks()} ${
+                                  calculateWeeks() !== 1 ? "weken" : "week"
                               }`
                             : ""}
                     </h3>

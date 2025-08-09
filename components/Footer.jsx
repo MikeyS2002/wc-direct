@@ -6,7 +6,6 @@ import Services from "./Services";
 const Footer = () => {
     return (
         <>
-            <Services />
             <footer className="bg-black p-5 md:p-10  text-white md:flex justify-between">
                 <div className="flex flex-col mb-10 md:mb-0 justify-between gap-5">
                     <p>WC-Direct</p>
@@ -47,11 +46,8 @@ const Footer = () => {
                         <Link href="/">
                             <li>Home</li>
                         </Link>
-                        <Link href="/mobiele-toiletten-huren-bouw">
-                            <li>Bouw</li>
-                        </Link>
-                        <Link href="/mobiele-toiletten-huren-evenementen">
-                            <li>Evenementen</li>
+                        <Link href="/mobiele-toiletten-huren-zakelijk">
+                            <li>Zakelijk</li>
                         </Link>
                         <Link href="/mobiele-toilet-huren-particulier">
                             <li>Particulier</li>

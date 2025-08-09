@@ -59,6 +59,7 @@ export async function POST(request) {
             postcode,
             stad,
             prijs,
+            opmerking = "",
             remark = "",
         } = await request.json();
 
@@ -93,6 +94,7 @@ export async function POST(request) {
                 tot: tot ? formatDateForStrapi(tot) : formatDateForStrapi(van),
                 aantal: ensureNumber(aantal, 1),
                 prijs: ensureNumber(prijs, 0),
+                opmerking: opmerking || "",
                 betaald: false,
                 aangevraagd_op: formatDateForStrapi(new Date()),
             },
@@ -107,7 +109,10 @@ export async function POST(request) {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        Authorization: `Bearer ${process.env.STRAPI_API_KEY}`,
+                        Authorization: `Bearer ${
+                            process.env.STRAPI_API_KEY ||
+                            process.env.NEXT_PUBLIC_STRAPI_API_KEY
+                        }`,
                     },
                     body: JSON.stringify({
                         data: {
@@ -123,6 +128,7 @@ export async function POST(request) {
                                 : formatDateForStrapi(van),
                             aantal: ensureNumber(aantal, 1),
                             prijs: ensureNumber(prijs, 0),
+                            opmerking: opmerking || "",
                             betaald: false,
                             aangevraagd_op: formatDateForStrapi(new Date()),
                         },
@@ -239,18 +245,31 @@ export async function POST(request) {
                             </tr>
                             <tr style="background: #e9e9e9;">
                                 <td style="padding: 8px 0;"><strong>Totaalprijs:</strong></td>
-                                <td><strong>€${totalPrice.toFixed(
-                                    2
-                                )}</strong></td>
+                                <td><strong>${
+                                    prijs !== null
+                                        ? `€${totalPrice.toFixed(2)}`
+                                        : "Prijs op aanvraag"
+                                }</strong></td>
                             </tr>
                         </table>
                     </div>
 
                     ${
+                        opmerking
+                            ? `
+                    <div style="margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 5px;">
+                        <h3 style="color: #444; margin-top: 0;">Opmerking van klant</h3>
+                        <p style="white-space: pre-wrap;">${opmerking}</p>
+                    </div>
+                    `
+                            : ""
+                    }
+
+                    ${
                         remark
                             ? `
                     <div style="margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 5px;">
-                        <h3 style="color: #444; margin-top: 0;">Opmerking</h3>
+                        <h3 style="color: #444; margin-top: 0;">Systeem opmerking</h3>
                         <p>${remark}</p>
                     </div>
                     `
@@ -293,12 +312,25 @@ export async function POST(request) {
                             </tr>
                             <tr style="background: #e9e9e9;">
                                 <td style="padding: 8px 0;"><strong>Totaalprijs:</strong></td>
-                                <td><strong>€${totalPrice.toFixed(
-                                    2
-                                )}</strong></td>
+                                <td><strong>${
+                                    prijs !== null
+                                        ? `€${totalPrice.toFixed(2)}`
+                                        : "Prijs op aanvraag"
+                                }</strong></td>
                             </tr>
                         </table>
                     </div>
+
+                    ${
+                        opmerking
+                            ? `
+                    <div style="margin: 20px 0; background: #f0f8ff; padding: 20px; border-radius: 5px;">
+                        <h4 style="color: #444; margin-top: 0;">Jouw opmerking</h4>
+                        <p style="white-space: pre-wrap; color: #666;">${opmerking}</p>
+                    </div>
+                    `
+                            : ""
+                    }
 
                     <div style="margin: 20px 0; padding: 20px; background: #f0f8ff; border-radius: 5px; border-left: 4px solid #007bff;">
                         <h4 style="color: #444; margin-top: 0;">Wat gebeurt er nu?</h4>
@@ -330,8 +362,10 @@ export async function POST(request) {
 
         return NextResponse.json(
             {
+                success: true,
                 message: "Bestelling is succesvol geplaatst",
                 bestellingId: bestellingId,
+                redirectUrl: "/success",
             },
             { status: 200 }
         );

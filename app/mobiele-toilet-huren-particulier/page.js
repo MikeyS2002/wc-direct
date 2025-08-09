@@ -5,6 +5,7 @@ import TextWithButtons from "@/components/TextWithButtons";
 import Stats from "@/components/Stats";
 import SideText from "@/components/SideText";
 import FullImg from "@/components/FullImg";
+import Services from "@/components/Services";
 
 export default function Particulier() {
     return (
@@ -42,6 +43,7 @@ export default function Particulier() {
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
             />
             <FullImg img="/images/bedrijf.jpg" alt="alt" />
+            <Services />
         </main>
     );
 }

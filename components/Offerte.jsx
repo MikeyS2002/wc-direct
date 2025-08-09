@@ -25,6 +25,7 @@ const Offerte = () => {
         adres: "",
         postcode: "",
         stad: "",
+        opmerking: "",
     });
     const [errors, setErrors] = useState({});
     const [submitStatus, setSubmitStatus] = useState(null);
@@ -84,10 +85,16 @@ const Offerte = () => {
         return aantal * prijsPerToilet;
     };
 
+    const shouldShowPrice = () => {
+        const aantal = parseInt(formData.aantal) || 0;
+        return aantal < 10;
+    };
+
     const shouldShowDirectPayment = () => {
         return (
             formData.type === "particulier" &&
-            parseInt(formData.aantal || 0) <= maxVoorraad
+            parseInt(formData.aantal || 0) <= maxVoorraad &&
+            shouldShowPrice() // Only show direct payment when price is shown
         );
     };
 
@@ -264,10 +271,10 @@ const Offerte = () => {
                 ...formData,
                 van: selected.from.toISOString(),
                 tot: selected.to ? selected.to.toISOString() : null,
-                prijs: calculateTotal(),
+                prijs: shouldShowPrice() ? calculateTotal() : null, // Don't send price if 10+ toilets
                 remark: `Bestelling via offerte aanvraag. Periode: ${calculateWeeks()} week${
                     calculateWeeks() !== 1 ? "s" : ""
-                }`,
+                }${shouldShowPrice() ? "" : " - Prijs op aanvraag"}`,
             };
 
             const response = await fetch("/api/bestellingen", {
@@ -281,22 +288,8 @@ const Offerte = () => {
             const result = await response.json();
 
             if (response.ok) {
-                setSubmitStatus({
-                    type: "success",
-                    message: `Offerte aanvraag #${result.bestellingId} is verzonden! Je ontvangt binnenkort een offerte per e-mail.`,
-                });
-
-                // Reset form
-                setFormData({
-                    type: "",
-                    naam: "",
-                    email: "",
-                    aantal: "",
-                    adres: "",
-                    postcode: "",
-                    stad: "",
-                });
-                setSelected(null);
+                // Redirect to success page for quote requests
+                window.location.href = "/success";
             } else {
                 throw new Error(result.error || "Er is een fout opgetreden");
             }
@@ -331,7 +324,7 @@ const Offerte = () => {
 
     return (
         <main className="grid h-[100lvh] md:grid-cols-2 relative">
-            <div className="mx-5 md:mx-10 mt-20 md:mt-10 flex flex-col sticky top-10 h-fit">
+            <div className="mx-5 md:mx-10 mt-20 md:mt-10 flex flex-col md:sticky top-10 h-fit">
                 <div className="space-y-2">
                     <h1 className="h4 mb-10">Uw gegevens</h1>
                     <div className="grid grid-cols-2 gap-2">
@@ -481,10 +474,28 @@ const Offerte = () => {
                             />
                         </div>
                     </div>
+                    <div>
+                        <label htmlFor="opmerking" className="sr-only">
+                            Opmerking (optioneel)
+                        </label>
+                        <textarea
+                            id="opmerking"
+                            name="opmerking"
+                            value={formData.opmerking}
+                            onChange={handleInputChange}
+                            placeholder="Opmerking (optioneel)"
+                            className={`input w-full min-h-[80px] resize-y`}
+                            rows="3"
+                        />
+                    </div>
                 </div>
 
                 <div className="border-t md:hidden border-t-black flex mt-10 pt-5 justify-between">
-                    <h3 className="h2">€{calculateTotal()}</h3>
+                    <h3 className="h2">
+                        {shouldShowPrice()
+                            ? `€${calculateTotal()}`
+                            : "Prijs op aanvraag"}
+                    </h3>
                     <h3 className="">
                         {formData.aantal || 0} toilet
                         {(parseInt(formData.aantal) || 0) !== 1 ? "ten" : ""}
@@ -546,7 +557,18 @@ const Offerte = () => {
                     />
                 </div>
                 <div className="border-t border-t-black flex mb-5 md:mb-10 pt-4 justify-between">
-                    <h3 className="h2">€{calculateTotal()}</h3>
+                    <div className="flex items-end gap-2">
+                        <h3 className="h2">
+                            {shouldShowPrice()
+                                ? `€${calculateTotal()}`
+                                : "Prijs op aanvraag"}
+                        </h3>
+                        {shouldShowPrice() && (
+                            <small className="opacity-50 mb-1">
+                                exclusief BTW
+                            </small>
+                        )}
+                    </div>
                     <h3 className="h3 opacity-50">
                         {formData.aantal || 0} toilet
                         {(parseInt(formData.aantal) || 0) !== 1 ? "ten" : ""}

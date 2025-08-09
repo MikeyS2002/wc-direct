@@ -1,6 +1,7 @@
 import AnimatedHeader from "@/components/AnimatedHeader";
 import Blocks from "@/components/Blocks";
 import FAQ from "@/components/FAQ";
+import Services from "@/components/Services";
 import SideText from "@/components/SideText";
 import TextImage from "@/components/TextImage";
 
@@ -31,7 +32,7 @@ export default function Home() {
     return (
         <main className="">
             <AnimatedHeader
-                seoH1=" Schoon en fris sanitair voor de bouw, evenementen, particulier
+                seoH1="Schoon en fris sanitair voor de bouw, evenementen, particulier
                 en elk project - Professionele sanitairoplossingen voor alle
                 sectoren"
                 text="Schoon en fris sanitair voor"
@@ -42,7 +43,8 @@ export default function Home() {
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
             />
             <Blocks />
-            <TextImage
+            <Services />
+            {/* <TextImage
                 img="/images/bedrijf.jpg"
                 alt="alt"
                 mt
@@ -62,7 +64,7 @@ export default function Home() {
                 mb
                 title="Flexibele  huurperiode"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
             <FAQ questions={questions} />
         </main>
     );

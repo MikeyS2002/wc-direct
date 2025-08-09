@@ -2,11 +2,11 @@
 
 :root {
     --background: #f1f3f5;
-    --primary: #8ab2ee;
+    --primary: #00ab7c;
     --contrast: #dfe5ef;
     --font-montserrat: "montserrat", sans-serif;
     --font-bebas: "bebas", sans-serif;
-    --rdp-range_start-color: #8ab2ee;
+    --rdp-range_start-color: #00ab7c;
 }
 
 @theme inline {
@@ -69,27 +69,27 @@
 }
 
 .rdp-range_middle {
-    background-color: #8ab2ee !important;
+    background-color: #00ab7c !important;
 }
 .rdp-range_end .rdp-day_button {
-    background-color: #3479e2 !important;
+    background-color: #037154 !important;
     border-radius: none !important;
 }
 .rdp-range_end {
     background: linear-gradient(
         to right,
-        #8ab2ee 50%,
+        #00ab7c 50%,
         transparent 50%
     ) !important;
 }
 .rdp-range_start {
     background: linear-gradient(
         to left,
-        #8ab2ee 50%,
+        #00ab7c 50%,
         transparent 50%
     ) !important;
 }
 
 .rdp-range_start .rdp-day_button {
-    background-color: #3479e2 !important;
+    background-color: #037154 !important;
 }

@@ -6,6 +6,7 @@ import "react-day-picker/style.css";
 import { nl } from "react-day-picker/locale";
 import Image from "next/image";
 import { loadStripe } from "@stripe/stripe-js";
+import Services from "./Services";
 
 // Initialize Stripe
 const stripePromise = loadStripe(
@@ -323,264 +324,273 @@ const Offerte = () => {
     }, []);
 
     return (
-        <main className="grid h-[100lvh] md:grid-cols-2 relative">
-            <div className="mx-5 md:mx-10 mt-20 md:mt-10 flex flex-col md:sticky top-10 h-fit">
-                <div className="space-y-2">
-                    <h1 className="h4 mb-10">Uw gegevens</h1>
-                    <div className="grid grid-cols-2 gap-2">
-                        <div className="pr-10 bg-contrast rounded">
-                            <label htmlFor="type" className="sr-only">
-                                Ik ben ...
-                            </label>
-                            <select
-                                id="type"
-                                name="type"
-                                value={formData.type}
-                                onChange={handleInputChange}
-                                className={`input w-full `}
-                                required
-                            >
-                                <option value="" disabled>
+        <>
+            <main className="grid h-[100lvh] md:grid-cols-2 relative">
+                <div className="mx-5 md:mx-10 mt-20 md:mt-10 flex flex-col md:sticky top-10 h-fit">
+                    <div className="space-y-2">
+                        <h1 className="h4 mb-10">Uw gegevens</h1>
+                        <div className="grid grid-cols-2 gap-2">
+                            <div className="pr-10 bg-contrast rounded">
+                                <label htmlFor="type" className="sr-only">
                                     Ik ben ...
-                                </option>
-                                <option value="bedrijf">
-                                    Ik ben een bedrijf
-                                </option>
-                                <option value="particulier">
-                                    Ik ben een particulier
-                                </option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="naam" className="sr-only">
-                                Naam
-                            </label>
-                            <input
-                                type="text"
-                                id="naam"
-                                name="naam"
-                                value={formData.naam}
-                                onChange={handleInputChange}
-                                placeholder="Naam"
-                                className={`input w-full `}
-                                required
-                            />
-                        </div>
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="sr-only">
-                            E-mail
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            placeholder="E-mail"
-                            className={`input w-full`}
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="aantal" className="sr-only">
-                            Aantal
-                        </label>
-                        <input
-                            type="number"
-                            id="aantal"
-                            name="aantal"
-                            value={formData.aantal}
-                            onChange={handleInputChange}
-                            placeholder="Aantal"
-                            min="1"
-                            className={`input w-full`}
-                            required
-                        />
-                    </div>
-                    <div className="relative" ref={datePickerRef}>
-                        <div
-                            className={`input cursor-pointer`}
-                            onClick={() => setShowDatePicker(!showDatePicker)}
-                        >
-                            <p className={selected ? "" : "opacity-50"}>
-                                {getDateDisplayText()}
-                            </p>
-                        </div>
-
-                        {showDatePicker && (
-                            <div className="w-fit p-5 absolute top-[calc(100%+8px)] left-0 text-white rounded-lg bg-black z-10">
-                                <DayPicker
-                                    mode="range"
-                                    selected={selected}
-                                    onSelect={setSelected}
-                                    locale={nl}
+                                </label>
+                                <select
+                                    id="type"
+                                    name="type"
+                                    value={formData.type}
+                                    onChange={handleInputChange}
+                                    className={`input w-full `}
                                     required
-                                    disabled={{ before: new Date() }}
-                                    classNames={{
-                                        today: ``,
-                                        selected: `border-primary`,
-                                        chevron: `fill-[#3479e2]`,
-                                    }}
+                                >
+                                    <option value="" disabled>
+                                        Ik ben ...
+                                    </option>
+                                    <option value="bedrijf">
+                                        Ik ben een bedrijf
+                                    </option>
+                                    <option value="particulier">
+                                        Ik ben een particulier
+                                    </option>
+                                </select>
+                            </div>
+                            <div>
+                                <label htmlFor="naam" className="sr-only">
+                                    Naam
+                                </label>
+                                <input
+                                    type="text"
+                                    id="naam"
+                                    name="naam"
+                                    value={formData.naam}
+                                    onChange={handleInputChange}
+                                    placeholder="Naam"
+                                    className={`input w-full `}
+                                    required
                                 />
                             </div>
-                        )}
-                    </div>
-
-                    <div>
-                        <label htmlFor="adres" className="sr-only">
-                            Adres
-                        </label>
-                        <input
-                            type="text"
-                            id="adres"
-                            name="adres"
-                            value={formData.adres}
-                            onChange={handleInputChange}
-                            placeholder="Adres"
-                            className={`input w-full`}
-                            required
-                        />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
+                        </div>
                         <div>
-                            <label htmlFor="postcode" className="sr-only">
-                                Postcode
+                            <label htmlFor="email" className="sr-only">
+                                E-mail
                             </label>
                             <input
-                                type="text"
-                                id="postcode"
-                                name="postcode"
-                                value={formData.postcode}
+                                type="email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
                                 onChange={handleInputChange}
-                                placeholder="Postcode"
+                                placeholder="E-mail"
                                 className={`input w-full`}
                                 required
                             />
                         </div>
                         <div>
-                            <label htmlFor="stad" className="sr-only">
-                                Stad
+                            <label htmlFor="aantal" className="sr-only">
+                                Aantal
                             </label>
                             <input
-                                type="text"
-                                id="stad"
-                                name="stad"
-                                value={formData.stad}
+                                type="number"
+                                id="aantal"
+                                name="aantal"
+                                value={formData.aantal}
                                 onChange={handleInputChange}
-                                placeholder="Stad"
+                                placeholder="Aantal"
+                                min="1"
                                 className={`input w-full`}
                                 required
                             />
                         </div>
-                    </div>
-                    <div>
-                        <label htmlFor="opmerking" className="sr-only">
-                            Opmerking (optioneel)
-                        </label>
-                        <textarea
-                            id="opmerking"
-                            name="opmerking"
-                            value={formData.opmerking}
-                            onChange={handleInputChange}
-                            placeholder="Opmerking (optioneel)"
-                            className={`input w-full min-h-[80px] resize-y`}
-                            rows="3"
-                        />
-                    </div>
-                </div>
+                        <div className="relative" ref={datePickerRef}>
+                            <div
+                                className={`input cursor-pointer`}
+                                onClick={() =>
+                                    setShowDatePicker(!showDatePicker)
+                                }
+                            >
+                                <p className={selected ? "" : "opacity-50"}>
+                                    {getDateDisplayText()}
+                                </p>
+                            </div>
 
-                <div className="border-t md:hidden border-t-black flex mt-10 pt-5 justify-between">
-                    <h3 className="h2">
-                        {shouldShowPrice()
-                            ? `€${calculateTotal()}`
-                            : "Prijs op aanvraag"}
-                    </h3>
-                    <h3 className="">
-                        {formData.aantal || 0} toilet
-                        {(parseInt(formData.aantal) || 0) !== 1 ? "ten" : ""}
-                        {calculateWeeks() > 0
-                            ? ` - ${calculateWeeks()} week${
-                                  calculateWeeks() !== 1 ? "s" : ""
-                              }`
-                            : ""}
-                    </h3>
-                </div>
-
-                <div className="space-y-2 mt-10">
-                    {shouldShowDirectPayment() && (
-                        <button
-                            className="button bg-black w-full disabled:opacity-50 disabled:cursor-not-allowed"
-                            onClick={() => handleSubmit("direct")}
-                            disabled={isLoading || isStripeLoading}
-                        >
-                            {isStripeLoading
-                                ? "Naar betaling..."
-                                : "Betaal direct"}
-                        </button>
-                    )}
-
-                    <button
-                        className={`${
-                            shouldShowDirectPayment()
-                                ? "bg-black/10 text-black "
-                                : "bg-black"
-                        } button w-full disabled:opacity-50 disabled:cursor-not-allowed`}
-                        onClick={() => handleSubmit("offerte")}
-                        disabled={isLoading || isStripeLoading}
-                    >
-                        {isLoading ? "Bezig..." : "Vraag een offerte aan"}
-                    </button>
-
-                    {submitStatus && (
-                        <div
-                            className={`p-4 mt-10 rounded-lg ${
-                                submitStatus.type === "success"
-                                    ? "bg-green-100 text-green-800 border border-green-300"
-                                    : "bg-red-100 text-red-800 border border-red-300"
-                            }`}
-                        >
-                            {submitStatus.message}
+                            {showDatePicker && (
+                                <div className="w-fit p-5 absolute top-[calc(100%+8px)] left-0 text-white rounded-lg bg-black z-10">
+                                    <DayPicker
+                                        mode="range"
+                                        selected={selected}
+                                        onSelect={setSelected}
+                                        locale={nl}
+                                        required
+                                        disabled={{ before: new Date() }}
+                                        classNames={{
+                                            today: ``,
+                                            selected: `border-primary`,
+                                            chevron: `fill-[#3479e2]`,
+                                        }}
+                                    />
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
-            </div>
 
-            <div className="bg-contrast md:flex hidden flex-col justify-between px-5 md:px-10 md:pt-[155px] pt-20">
-                <div className="flex justify-center">
-                    <Image
-                        src="/images/toilet1.png"
-                        alt="gehuurd toilet"
-                        width={350}
-                        height={350}
-                        className=""
-                    />
-                </div>
-                <div className="border-t border-t-black flex mb-5 md:mb-10 pt-4 justify-between">
-                    <div className="flex items-end gap-2">
+                        <div>
+                            <label htmlFor="adres" className="sr-only">
+                                Adres
+                            </label>
+                            <input
+                                type="text"
+                                id="adres"
+                                name="adres"
+                                value={formData.adres}
+                                onChange={handleInputChange}
+                                placeholder="Adres"
+                                className={`input w-full`}
+                                required
+                            />
+                        </div>
+                        <div className="grid grid-cols-2 gap-2">
+                            <div>
+                                <label htmlFor="postcode" className="sr-only">
+                                    Postcode
+                                </label>
+                                <input
+                                    type="text"
+                                    id="postcode"
+                                    name="postcode"
+                                    value={formData.postcode}
+                                    onChange={handleInputChange}
+                                    placeholder="Postcode"
+                                    className={`input w-full`}
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="stad" className="sr-only">
+                                    Stad
+                                </label>
+                                <input
+                                    type="text"
+                                    id="stad"
+                                    name="stad"
+                                    value={formData.stad}
+                                    onChange={handleInputChange}
+                                    placeholder="Stad"
+                                    className={`input w-full`}
+                                    required
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <label htmlFor="opmerking" className="sr-only">
+                                Opmerking (optioneel)
+                            </label>
+                            <textarea
+                                id="opmerking"
+                                name="opmerking"
+                                value={formData.opmerking}
+                                onChange={handleInputChange}
+                                placeholder="Opmerking (optioneel)"
+                                className={`input w-full min-h-[80px] resize-y`}
+                                rows="3"
+                            />
+                        </div>
+                    </div>
+
+                    <div className="border-t md:hidden border-t-black flex mt-10 pt-5 justify-between">
                         <h3 className="h2">
                             {shouldShowPrice()
                                 ? `€${calculateTotal()}`
                                 : "Prijs op aanvraag"}
                         </h3>
-                        {shouldShowPrice() && (
-                            <small className="opacity-50 mb-1">
-                                exclusief BTW
-                            </small>
+                        <h3 className="">
+                            {formData.aantal || 0} toilet
+                            {(parseInt(formData.aantal) || 0) !== 1
+                                ? "ten"
+                                : ""}
+                            {calculateWeeks() > 0
+                                ? ` - ${calculateWeeks()} week${
+                                      calculateWeeks() !== 1 ? "s" : ""
+                                  }`
+                                : ""}
+                        </h3>
+                    </div>
+
+                    <div className="space-y-2 mt-10">
+                        {shouldShowDirectPayment() && (
+                            <button
+                                className="button bg-black w-full disabled:opacity-50 disabled:cursor-not-allowed"
+                                onClick={() => handleSubmit("direct")}
+                                disabled={isLoading || isStripeLoading}
+                            >
+                                {isStripeLoading
+                                    ? "Naar betaling..."
+                                    : "Betaal direct"}
+                            </button>
+                        )}
+
+                        <button
+                            className={`${
+                                shouldShowDirectPayment()
+                                    ? "bg-black/10 text-black "
+                                    : "bg-black"
+                            } button w-full disabled:opacity-50 disabled:cursor-not-allowed`}
+                            onClick={() => handleSubmit("offerte")}
+                            disabled={isLoading || isStripeLoading}
+                        >
+                            {isLoading ? "Bezig..." : "Vraag een offerte aan"}
+                        </button>
+
+                        {submitStatus && (
+                            <div
+                                className={`p-4 mt-10 rounded-lg ${
+                                    submitStatus.type === "success"
+                                        ? "bg-green-100 text-green-800 border border-green-300"
+                                        : "bg-red-100 text-red-800 border border-red-300"
+                                }`}
+                            >
+                                {submitStatus.message}
+                            </div>
                         )}
                     </div>
-                    <h3 className="h3 opacity-50">
-                        {formData.aantal || 0} toilet
-                        {(parseInt(formData.aantal) || 0) !== 1 ? "ten" : ""}
-                        {calculateWeeks() > 0
-                            ? ` - ${calculateWeeks()} ${
-                                  calculateWeeks() !== 1 ? "weken" : "week"
-                              }`
-                            : ""}
-                    </h3>
                 </div>
-            </div>
-        </main>
+
+                <div className="bg-contrast md:flex hidden flex-col justify-between px-5 md:px-10 md:pt-[155px] pt-20">
+                    <div className="flex justify-center">
+                        <Image
+                            src="/images/toilet1.png"
+                            alt="gehuurd toilet"
+                            width={350}
+                            height={350}
+                            className=""
+                        />
+                    </div>
+                    <div className="border-t border-t-black flex mb-5 md:mb-10 pt-4 justify-between">
+                        <div className="flex items-end gap-2">
+                            <h3 className="h2">
+                                {shouldShowPrice()
+                                    ? `€${calculateTotal()}`
+                                    : "Prijs op aanvraag"}
+                            </h3>
+                            {shouldShowPrice() && (
+                                <small className="opacity-50 mb-1">
+                                    exclusief BTW
+                                </small>
+                            )}
+                        </div>
+                        <h3 className="h3 opacity-50">
+                            {formData.aantal || 0} toilet
+                            {(parseInt(formData.aantal) || 0) !== 1
+                                ? "ten"
+                                : ""}
+                            {calculateWeeks() > 0
+                                ? ` - ${calculateWeeks()} ${
+                                      calculateWeeks() !== 1 ? "weken" : "week"
+                                  }`
+                                : ""}
+                        </h3>
+                    </div>
+                </div>
+            </main>
+            <Services />
+        </>
     );
 };
 

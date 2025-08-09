@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const PDP = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -169,14 +170,15 @@ const PDP = () => {
                     </p>
                     <p>€50 vervolgweken</p>
                 </div>
-
-                <button
-                    className="button bg-primary w-full cursor-pointer"
-                    type="button"
-                    aria-label="Bestel nu mobiele toilet"
-                >
-                    Bestel Mobiele Toilet
-                </button>
+                <Link href="/bestellen">
+                    <button
+                        className="button bg-primary w-full cursor-pointer"
+                        type="button"
+                        aria-label="Bestel nu mobiele toilet"
+                    >
+                        Bestel Mobiele Toilet
+                    </button>
+                </Link>
 
                 <div className="my-20">
                     <h2 className="sr-only">

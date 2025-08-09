@@ -12,11 +12,7 @@ const Blocks = () => {
             title: "Mobiele Toilet Verhuur voor Bedrijven",
             description:
                 "Professionele sanitaire oplossingen voor bouwplaatsen, kantoren en bedrijfsevenementen",
-            cta: "Vraag een offerte",
-            pricing: {
-                first: "€150 eerste week",
-                subsequent: "€50 vervolgweken",
-            },
+            cta: "Bestel direct",
         },
         {
             href: "/mobiele-toilet",
@@ -26,11 +22,7 @@ const Blocks = () => {
             title: "Mobiele Toilet Verhuur voor Particulieren",
             description:
                 "Hygiënische toiletoplossingen voor bruiloften, feesten en privé-evenementen",
-            cta: "Betaal direct",
-            pricing: {
-                first: "€150 eerste week",
-                subsequent: "€50 vervolgweken",
-            },
+            cta: "Bestel direct",
         },
     ];
 
@@ -71,18 +63,6 @@ const Blocks = () => {
                                         .slice(-2)
                                         .join(" ")}
                                 </h3>
-                                <div
-                                    className="text-left whitespace-nowrap flex-shrink-0"
-                                    aria-label={`Prijzen: ${service.pricing.first}, ${service.pricing.subsequent}`}
-                                >
-                                    <p className="whitespace-nowrap">
-                                        <span>{service.pricing.first}</span>
-                                        <br />
-                                        <span>
-                                            {service.pricing.subsequent}
-                                        </span>
-                                    </p>
-                                </div>
                             </div>
                             <div className="md:block hidden">
                                 <button className="cursor-pointer button bg-primary h-fit">

@@ -71,7 +71,7 @@ const Navbar = () => {
                     role="none"
                 >
                     <Link href="/mobiele-toilet-huren-zakelijk" role="menuitem">
-                        Zakelijk
+                        Bedrijven
                     </Link>
                 </li>
 
@@ -80,7 +80,7 @@ const Navbar = () => {
                         href="/mobiele-toilet-huren-particulier"
                         role="menuitem"
                     >
-                        Particulier
+                        Particulieren
                     </Link>
                 </li>
                 <li className="body" role="none">
@@ -97,7 +97,7 @@ const Navbar = () => {
                     aria-label="Vraag een offerte aan voor mobiele toilet verhuur"
                 >
                     <span>Bestel</span>
-                    <span className="hidden sm:block">gelijk</span>
+                    <span className="hidden sm:block">direct</span>
                 </Link>
             </div>
         </nav>

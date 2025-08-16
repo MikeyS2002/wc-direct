@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Stats = ({ stats }) => {
@@ -22,9 +23,11 @@ const Stats = ({ stats }) => {
                         {item}
                     </h3>
                 ))}
-                <button className="button cursor-pointer bg-black">
-                    Bestel gelijk
-                </button>
+                <Link href="/bestellen">
+                    <button className="button cursor-pointer bg-black">
+                        Bestel gelijk
+                    </button>
+                </Link>
             </div>
         </section>
     );

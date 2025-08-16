@@ -1,7 +1,10 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 
-const FAQ = ({ questions, title = "Veelgestelde vragen" }) => {
+const FAQ = ({
+    questions,
+    title = "Veelgestelde vragen over toiletverhuur",
+}) => {
     const [openIndex, setOpenIndex] = useState(null);
     const refs = useRef([]);
 

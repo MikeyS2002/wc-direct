@@ -15,8 +15,10 @@ const SideText = ({ header, text }) => {
 
     return (
         <section className="mx-5 my-10 md:m-10 md:w-[500px] md:ml-auto">
-            <h2 className="font-semibold mb-2">{header}</h2>
-            <p>{formatText(text)}</p>
+            <h2 className="font-semibold text-justify text-[18.5px] mb-2">
+                {header}
+            </h2>
+            <p className="text-justify">{formatText(text)}</p>
         </section>
     );
 };

@@ -42,7 +42,7 @@ export default function Home() {
             />
             <SideText
                 header="WC-Direct: mobiele toiletten, snel geleverd en goed verzorgd."
-                text="Bij WC-Direct regelen we het gewoon. Bel je vandaag, dan staat je toilet er vaak morgen al. Of het nu voor de bouw is, een feestje in de tuin of een groot evenement, wij zorgen dat het op tijd staat, schoon is en wekelijks wordt onderhouden. Zo hoef jij je nergens druk om te maken en kun jij je focussen op je eigen project of feest.
+                text="Bij WC-Direct regelen we het gewoon. Bel je vandaag, dan staat je toilet er vaak morgen al. Of het nu voor de bouw is, een feestje in de tuin of een groot evenement, wij zorgen dat het op tijd staat, schoon is en wekelijks wordt onderhouden. Zo hoef jij je nergens druk om te maken en kun jij je focussen op je eigen project of evenement.
                 <br /> <br />
 Wij leveren in heel Noord-Holland, onder andere in Purmerend, Amsterdam, Zaandam, Hoorn en Alkmaar. Altijd met transparante prijzen en geen verborgen kosten."
             />
@@ -73,6 +73,7 @@ Wij leveren in heel Noord-Holland, onder andere in Purmerend, Amsterdam, Zaandam
             <TextWithButtons
                 title="Huur vandaag nog je mobiele toilet"
                 text="Voor bouw, bij je thuis of op een event in Noord-Holland. Snel geleverd, perfect verzorgd, altijd schoon."
+                call
             />
         </main>
     );

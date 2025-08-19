@@ -18,11 +18,11 @@ const Footer = () => {
                             <div>
                                 <span>Telefoon:</span>
                                 <a
-                                    href="tel:0650928799"
+                                    href="tel:0634124702"
                                     className="ml-1 hover:underline rounded"
                                     aria-label="Bel ons op 06 50928799"
                                 >
-                                    06 50928799
+                                    0634124702
                                 </a>
                             </div>
                             <div>
@@ -32,7 +32,7 @@ const Footer = () => {
                                     className="ml-1 hover:underline rounded"
                                     aria-label="Stuur ons een e-mail"
                                 >
-                                    info@dryveverhuur.nl
+                                    info@wc-direct.nl
                                 </a>
                             </div>
                         </div>
@@ -65,9 +65,6 @@ const Footer = () => {
                         </Link>
                         <Link href="/">
                             <li>Algemene voorwaarden</li>
-                        </Link>
-                        <Link href="/">
-                            <li>Annulerings voorwaarden</li>
                         </Link>
                     </ul>
                     <ul className="space-y-2 ">

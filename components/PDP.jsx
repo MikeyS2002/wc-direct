@@ -164,11 +164,12 @@ const PDP = () => {
 
                     <p className="opacity-50">
                         <span itemProp="price" content="150">
-                            €150
+                            €125
                         </span>{" "}
                         eerste week
                     </p>
                     <p>€50 vervolgweken</p>
+                    <p className="opacity-50">(excl. BTW)</p>
                 </div>
                 <Link href="/bestellen">
                     <button

@@ -60,7 +60,6 @@ export async function POST(request) {
             stad,
             prijs,
             opmerking = "",
-            remark = "",
         } = await request.json();
 
         // Validation
@@ -266,11 +265,11 @@ export async function POST(request) {
                     }
 
                     ${
-                        remark
+                        opmerking
                             ? `
                     <div style="margin: 20px 0; background: #f9f9f9; padding: 20px; border-radius: 5px;">
                         <h3 style="color: #444; margin-top: 0;">Systeem opmerking</h3>
-                        <p>${remark}</p>
+                        <p>${opmerking}</p>
                     </div>
                     `
                             : ""

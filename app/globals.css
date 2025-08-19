@@ -4,7 +4,8 @@
     --background: #f1f3f5;
     --primary: #00ab7c;
     --contrast: #dfe5ef;
-    --font-montserrat: "montserrat", sans-serif;
+    /* --font-montserrat: "montserrat", sans-serif; */
+    --font-aptos: "aptos", sans-serif;
     --font-bebas: "bebas", sans-serif;
     --rdp-range_start-color: #00ab7c;
 }
@@ -13,20 +14,21 @@
     --color-background: var(--background);
     --color-primary: var(--primary);
     --color-contrast: var(--contrast);
-    --font-montserrat: var(--font-montserrat);
+    /* --font-montserrat: var(--font-montserrat); */
     --font-bebas: var(--font-bebas);
+    --font-aptos: var(--font-aptos);
 }
 
 @layer components {
     * {
         -webkit-font-smoothing: antialiased;
-        @apply font-montserrat focus:outline-none;
+        @apply font-aptos focus:outline-none;
     }
     body {
         @apply bg-background text-black;
     }
     .h1 {
-        @apply text-[40px] md:text-[100px] tracking-[0.01em] leading-[110%];
+        @apply text-[40px] md:text-[100px] font-[400] leading-[110%];
     }
     .h2 {
         @apply font-bebas text-[40px] tracking-[0.05em] leading-[110%];
@@ -66,6 +68,16 @@
     font-family: "montserrat";
     src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
     font-weight: 600;
+}
+@font-face {
+    font-family: "aptos";
+    src: url("/fonts/Aptos-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "aptos";
+    src: url("/fonts/Aptos.ttf") format("truetype");
+    font-weight: 400;
 }
 
 .rdp-range_middle {

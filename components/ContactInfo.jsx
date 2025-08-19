@@ -3,17 +3,16 @@ import React from "react";
 const ContactInfo = ({ mt = true }) => {
     const contactItems = [
         {
-            label: "Afhaalpunt",
-            content: "Oude Sluis 10A, 1441 CG Purmerend",
-            href: "https://maps.app.goo.gl/sxdXH32gFJZhdZkY8",
-            ariaLabel:
-                "Bekijk ons afhaalpunt op Google Maps - opent in nieuw tabblad",
-            type: "location",
+            label: "Mobiel",
+            content: "0634124702",
+            href: "tel:0634124702",
+            ariaLabel: "Bel ons direct",
+            type: "number",
         },
         {
             label: "E-mail",
-            content: "info@dryveverhuur.nl",
-            href: "mailto:info@dryveverhuur.nl",
+            content: "info@wc-direct.nl",
+            href: "mailto:info@wc-direct.nl",
             ariaLabel: "Stuur ons een e-mail",
             type: "email",
         },

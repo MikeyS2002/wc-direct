@@ -38,8 +38,8 @@ const Services = () => {
                     <p className="text-center">
                         We houden het graag simpel: transparante prijzen, geen
                         verborgen kosten en je toilet op tijd. Vanaf €125 eerste
-                        week, daarna €40 per week. Alles inclusief levering,
-                        plaatsing en onderhoud.
+                        week, daarna €40 per week (excl. BTW). Alles inclusief
+                        levering, plaatsing en onderhoud.
                     </p>
                 </div>
             </section>

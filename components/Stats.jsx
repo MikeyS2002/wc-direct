@@ -18,7 +18,7 @@ const Stats = ({ stats }) => {
                 {stats.map((item, i) => (
                     <h3
                         key={i}
-                        className="button text-black border border-black/30 text-left w-full md:w-[500px]"
+                        className="button text-black border border-black/30 text-left w-full lg:w-[500px]"
                     >
                         {item}
                     </h3>

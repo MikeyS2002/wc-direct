@@ -13,7 +13,7 @@ export default function Contact() {
                     <ContactForm />
                     <ContactInfo />
                 </div>
-                <LocationMap />
+                {/* <LocationMap /> */}
             </section>
         </main>
     );

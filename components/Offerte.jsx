@@ -76,8 +76,8 @@ const Offerte = () => {
     const calculatePricePerToilet = () => {
         const weeks = calculateWeeks();
         if (weeks === 0) return 0;
-        if (weeks === 1) return 150;
-        return 150 + (weeks - 1) * 50;
+        if (weeks === 1) return 125;
+        return 125 + (weeks - 1) * 40;
     };
 
     const calculateTotal = () => {
@@ -273,9 +273,7 @@ const Offerte = () => {
                 van: selected.from.toISOString(),
                 tot: selected.to ? selected.to.toISOString() : null,
                 prijs: shouldShowPrice() ? calculateTotal() : null, // Don't send price if 10+ toilets
-                remark: `Bestelling via offerte aanvraag. Periode: ${calculateWeeks()} week${
-                    calculateWeeks() !== 1 ? "s" : ""
-                }${shouldShowPrice() ? "" : " - Prijs op aanvraag"}`,
+                opmerking: formData.opmerking || "",
             };
 
             const response = await fetch("/api/bestellingen", {

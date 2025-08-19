@@ -38,7 +38,7 @@ const AnimatedHeader = ({ seoH1, words, text }) => {
                             duration: 0.3,
                             ease: "easeOut",
                         }}
-                        className="h1 text-primary absolute top-0 left-0 whitespace-nowrap"
+                        className="h1 font-[400] text-primary absolute top-0 left-0 whitespace-nowrap"
                         role="text"
                         aria-atomic="true"
                     >

@@ -24,17 +24,17 @@ const PDP = () => {
     }, [openIndex]);
 
     const features = [
-        "Professionele wekelijkse schoonmaak",
-        "Gratis bezorging en ophaalservice",
-        "Geschikt voor alle evenementen",
-        "24/7 beschikbaar voor spoedleveringen",
+        "Wekelijkse professionele reiniging inbegrepen",
+        "Wij plaatsen en halen het toilet op de afgesproken plek",
+        "Geschikt voor bouw, feesten en verbouwingen",
+        "Binnen 48 uur geleverd, spoed mogelijk in overleg",
     ];
 
     const faqItems = [
         {
             title: "Omschrijving",
             content:
-                "Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak.",
+                "Onze mobiele toiletten zijn de ideale oplossing voor tijdelijke sanitaire voorzieningen. Of het nu gaat om een bouwproject, verbouwing, evenement of tuinfeest: je bent verzekerd van een schoon, praktisch en gebruiksvriendelijk toilet. Dankzij de compacte afmetingen kan het toilet vrijwel overal geplaatst worden.",
         },
         {
             title: "Grootte",
@@ -42,32 +42,31 @@ const PDP = () => {
                 <div className="space-y-1">
                     <div className="flex justify-between">
                         <p>Breedte</p>
-                        <p>xcm</p>
+                        <p>110cm</p>
                     </div>
                     <div className="flex justify-between">
-                        <p>Lengte</p>
-                        <p>xcm</p>
+                        <p>Diepte</p>
+                        <p>120cm</p>
                     </div>
                     <div className="flex justify-between">
                         <p>Hoogte</p>
-                        <p>xcm</p>
+                        <p>235cm</p>
                     </div>
                     <div className="flex justify-between">
                         <span>Gewicht</span>
-                        <span>85 kg</span>
+                        <span>73 kg</span>
                     </div>
                 </div>
             ),
         },
         {
-            title: "Schoonmaak",
+            title: "Materiaal",
             content:
-                "Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak.",
+                "Duurzaam, UV-bestendig polyethyleen → bestand tegen weer en wind.",
         },
         {
-            title: "Bezorgen en opzetten",
-            content:
-                "Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak.",
+            title: "Tankinhoud & capaciteit",
+            content: "250 liter tank, geschikt voor gemiddeld 300 wc-beurten.",
         },
     ];
 

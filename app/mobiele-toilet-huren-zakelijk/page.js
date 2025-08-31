@@ -44,9 +44,9 @@ export default function Zakelijk() {
             />
             <TextWithButtons
                 title="Mobiele toiletten voor bedrijven: betrouwbaar van start tot finish en op tijd, zonder gedoe"
-                text="In jouw werk telt elke dag. Je wilt mobiele toiletten die op tijd staan, goed onderhouden worden en waar je geen omkijken naar hebt. Eén aanspreekpunt, duidelijke afspraken en geen verrassingen achteraf. Of het nu voor een bouwproject, festival of gemeentelijk evenement is – wij zorgen dat je sanitair op tijd is.
-<br /><br />
-Bij WC-Direct regelen we het voor je. We leveren vaak binnen 48 uur, verzorgen wekelijks onderhoud en zijn altijd bereikbaar voor vragen of wijzigingen. Zo kun jij je focussen op je project, terwijl wij zorgen voor schoon en betrouwbaar sanitair."
+                text="In jouw werk telt elke dag. Je wilt mobiele toiletten die op tijd staan, goed onderhouden worden en waar je geen omkijken naar hebt. Eén aanspreekpunt, duidelijke afspraken en geen verrassingen achteraf. Of het nu voor een bouwproject, festival of gemeentelijk evenement is wij zorgen dat jouw sanitaire voorzieningen op tijd staan, schoon blijven en goed onderhouden worden.
+                <br /><br />
+                Bij WC-Direct regelen we het voor je. We leveren vaak binnen 48 uur, verzorgen wekelijks onderhoud en zijn altijd bereikbaar voor vragen of wijzigingen. Zo kun jij je focussen op je project, terwijl wij zorgen voor schoon en betrouwbaar sanitair."
             />
             <Stats
                 stats={[

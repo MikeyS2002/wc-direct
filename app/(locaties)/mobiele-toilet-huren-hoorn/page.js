@@ -22,28 +22,18 @@ export default function Hoorn() {
                     "heel Noord-Holland",
                 ]}
             />
-            <SideText
+            {/* <SideText
                 header="Sanitaire voorzieningen voor elk project"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
             <FullImg img="/images/bedrijf.jpg" alt="alt" />
             <TextWithButtons
-                title="titel"
-                text=" Van bouwplaatsen tot bruiloften - wij leveren schone,
-                betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts
-                €150 eerste week, daarna €50 per week inclusief wekelijkse
-                schoonmaak. Van bouwplaatsen tot bruiloften - wij leveren
-                schone, betrouwbare mobiele toiletten waar u ze nodig heeft.
-                Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak. Van bouwplaatsen tot bruiloften - wij
-                leveren schone, betrouwbare mobiele toiletten waar u ze nodig
-                heeft. Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak. Van bouwplaatsen tot bruiloften - wij
-                leveren schone, betrouwbare mobiele toiletten waar u ze nodig
-                heeft. Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak."
+                title="Mobiel toilet huren in Hoorn"
+                text="Voor bouwplaatsen in Zwaag, evenementen aan de haven of een verbouwing in Blokker: WC-Direct levert schone mobiele toiletten in heel Hoorn en West-Friesland. Vaak binnen 48 uur geplaatst en altijd inclusief wekelijkse schoonmaak. Zo weet je zeker dat je sanitaire voorzieningen geregeld zijn, zonder verrassingen achteraf.
+                <br /><br />
+                👉 Huur nu eenvoudig een mobiel toilet in Hoorn bij WC-Direct."
             />
-            <SocialProof
+            {/* <SocialProof
                 title="We staan door heel Purmerend"
                 imgs={[
                     { img: "/images/bedrijf.jpg", alt: "alt" },
@@ -51,9 +41,9 @@ export default function Hoorn() {
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                 ]}
-            />
+            /> */}
 
-            <TextImage
+            {/* <TextImage
                 img="/images/bedrijf.jpg"
                 alt="alt"
                 mt
@@ -67,7 +57,7 @@ export default function Hoorn() {
                 mb
                 title="Snelle levering"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
         </main>
     );
 }

@@ -22,28 +22,18 @@ export default function Alkmaar() {
                     "heel Noord-Holland",
                 ]}
             />
-            <SideText
+            {/* <SideText
                 header="Sanitaire voorzieningen voor elk project"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
             <FullImg img="/images/bedrijf.jpg" alt="alt" />
             <TextWithButtons
-                title="titel"
-                text=" Van bouwplaatsen tot bruiloften - wij leveren schone,
-                betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts
-                €150 eerste week, daarna €50 per week inclusief wekelijkse
-                schoonmaak. Van bouwplaatsen tot bruiloften - wij leveren
-                schone, betrouwbare mobiele toiletten waar u ze nodig heeft.
-                Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak. Van bouwplaatsen tot bruiloften - wij
-                leveren schone, betrouwbare mobiele toiletten waar u ze nodig
-                heeft. Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak. Van bouwplaatsen tot bruiloften - wij
-                leveren schone, betrouwbare mobiele toiletten waar u ze nodig
-                heeft. Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak."
+                title="Mobiel toilet huren in Alkmaar"
+                text="Of je nu een evenement organiseert in het centrum, een bouwproject hebt in Oudorp of een feest in Koedijk: WC-Direct levert snel en betrouwbaar. Binnen 48 uur staat je mobiele toilet op locatie in Alkmaar of omgeving. Altijd schoon door wekelijkse reiniging en transparant in prijs.
+                <br /><br />
+                👉 Vraag vandaag nog een offerte aan voor een mobiel toilet in Alkmaar."
             />
-            <SocialProof
+            {/* <SocialProof
                 title="We staan door heel Purmerend"
                 imgs={[
                     { img: "/images/bedrijf.jpg", alt: "alt" },
@@ -51,9 +41,9 @@ export default function Alkmaar() {
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                 ]}
-            />
+            /> */}
 
-            <TextImage
+            {/* <TextImage
                 img="/images/bedrijf.jpg"
                 alt="alt"
                 mt
@@ -67,7 +57,7 @@ export default function Alkmaar() {
                 mb
                 title="Snelle levering"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
         </main>
     );
 }

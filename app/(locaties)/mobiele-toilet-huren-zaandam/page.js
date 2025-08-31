@@ -22,28 +22,18 @@ export default function Zaandam() {
                     "heel Noord-Holland",
                 ]}
             />
-            <SideText
+            {/* <SideText
                 header="Sanitaire voorzieningen voor elk project"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
             <FullImg img="/images/bedrijf.jpg" alt="alt" />
             <TextWithButtons
-                title="titel"
-                text=" Van bouwplaatsen tot bruiloften - wij leveren schone,
-                betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts
-                €150 eerste week, daarna €50 per week inclusief wekelijkse
-                schoonmaak. Van bouwplaatsen tot bruiloften - wij leveren
-                schone, betrouwbare mobiele toiletten waar u ze nodig heeft.
-                Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak. Van bouwplaatsen tot bruiloften - wij
-                leveren schone, betrouwbare mobiele toiletten waar u ze nodig
-                heeft. Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak. Van bouwplaatsen tot bruiloften - wij
-                leveren schone, betrouwbare mobiele toiletten waar u ze nodig
-                heeft. Slechts €150 eerste week, daarna €50 per week inclusief
-                wekelijkse schoonmaak."
+                title="Mobiel toilet huren in Zaandam"
+                text="Van bouwprojecten langs de Zaan tot buurtfeesten in Kogerveld – WC-Direct levert snel en betrouwbaar mobiele toiletten in Zaandam en de hele Zaanstreek. Binnen 48 uur op locatie, schoon en wekelijks onderhouden. Ideaal voor zowel bouw, evenementen als particuliere verhuur.
+                <br /><br />
+                👉 Bestel direct jouw mobiele toilet in Zaandam."
             />
-            <SocialProof
+            {/* <SocialProof
                 title="We staan door heel Purmerend"
                 imgs={[
                     { img: "/images/bedrijf.jpg", alt: "alt" },
@@ -51,9 +41,9 @@ export default function Zaandam() {
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                 ]}
-            />
+            /> */}
 
-            <TextImage
+            {/* <TextImage
                 img="/images/bedrijf.jpg"
                 alt="alt"
                 mt
@@ -67,7 +57,7 @@ export default function Zaandam() {
                 mb
                 title="Snelle levering"
                 text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
+            /> */}
         </main>
     );
 }

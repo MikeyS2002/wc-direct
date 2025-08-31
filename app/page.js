@@ -38,7 +38,13 @@ export default function Home() {
                 en elk project - Professionele sanitairoplossingen voor alle
                 sectoren"
                 text="Schoon en fris sanitair voor"
-                words={["de bouw", "evenementen", "particulier", "elk project"]}
+                words={[
+                    "de bouw",
+                    "jouw evenement",
+                    "feesten en bruiloften",
+                    "verbouwingen thuis",
+                    "elk project",
+                ]}
             />
             <SideText
                 header="WC-Direct: mobiele toiletten, snel geleverd en goed verzorgd."

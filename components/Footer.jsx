@@ -63,7 +63,7 @@ const Footer = () => {
                         <Link href="/mobiele-toilet">
                             <li>Meer over onze toiletten</li>
                         </Link>
-                        <Link href="/">
+                        <Link href="/algemene-voorwaarden">
                             <li>Algemene voorwaarden</li>
                         </Link>
                     </ul>

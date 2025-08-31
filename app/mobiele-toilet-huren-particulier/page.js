@@ -7,6 +7,33 @@ import SideText from "@/components/SideText";
 import FullImg from "@/components/FullImg";
 import Services from "@/components/Services";
 
+export const metadata = {
+    title: "Mobiel toilet huren voor verbouwing of feest",
+    keywords: [
+        "mobiel toilet particulieren",
+        "toilet huren feest",
+        "toiletverhuur verbouwing",
+        "dixi huren particulier",
+        "mobiele toiletten Noord-Holland",
+        "schoon toilet huren",
+    ],
+    description:
+        "Organiseer je een feest of verbouw je huis? Huur een mobiel toilet bij WC-Direct. Snel geleverd, transparante prijs, altijd schoon.",
+    openGraph: {
+        images: [
+            {
+                url: "https://www.jouwdomein.nl/og/particulier.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Contact WC-Direct",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.wc-direct.nl/mobiele-toilet-huren-particulier",
+    },
+};
+
 export default function Particulier() {
     return (
         <main>

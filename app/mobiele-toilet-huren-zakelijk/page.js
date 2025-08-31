@@ -7,6 +7,33 @@ import SideText from "@/components/SideText";
 import FullImg from "@/components/FullImg";
 import Services from "@/components/Services";
 
+export const metadata = {
+    title: "Mobiele toiletten huren voor bedrijven",
+    keywords: [
+        "mobiel toilet bedrijven",
+        "toiletverhuur bouwplaats",
+        "toilet huren zakelijk",
+        "dixi huren bouw",
+        "zakelijke toiletverhuur",
+        "sanitair verhuur evenementen",
+    ],
+    description:
+        "Betrouwbare toiletverhuur voor bouw, festivals en gemeentelijke projecten. Binnen 48 uur geleverd, wekelijks gereinigd en één aanspreekpunt.",
+    openGraph: {
+        images: [
+            {
+                url: "https://www.jouwdomein.nl/og/bedrijf.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Contact WC-Direct",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.wc-direct.nl/mobiele-toilet-huren-zakelijk",
+    },
+};
+
 export default function Zakelijk() {
     return (
         <main>

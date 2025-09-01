@@ -553,7 +553,7 @@ const Offerte = () => {
                 <div className="bg-contrast md:flex hidden flex-col justify-between px-5 md:px-10 md:pt-[155px] pt-20">
                     <div className="flex justify-center">
                         <Image
-                            src="/images/toilet1.png"
+                            src="/images/toilet-transparent.png"
                             alt="gehuurd toilet"
                             width={350}
                             height={350}

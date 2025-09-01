@@ -7,11 +7,11 @@ const Stats = ({ stats }) => {
         <section className="md:grid grid-cols-2 md:mx-10 mx-5 gap-10 my-20 md:my-40 z-0 md:relative">
             <div className="h-[60svh] md:h-[100lvh] relative bg-contrast mb-5 md:mb-0 w-full">
                 <Image
-                    src="/images/toilet1.png"
+                    src="/images/toilet-transparent.png"
                     alt="alt"
                     width={300}
                     height={500}
-                    className="w-full h-full object-contain md:px-30 p-20"
+                    className="w-full h-full object-contain md:px-40 p-20"
                 />
             </div>
             <div className=" space-y-3 md:sticky md:top-[128px] h-fit">

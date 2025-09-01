@@ -72,7 +72,7 @@ const PDP = () => {
 
     return (
         <section className="lg:flex">
-            <div className="w-full sticky top-1 flex overflow-x-scroll flex-nowrap lg:grid lg:grid-cols-2 gap-1 h-fit mt-1 ml-1">
+            <div className="w-full md:sticky top-1 flex overflow-x-scroll flex-nowrap lg:grid lg:grid-cols-2 gap-1 h-fit mt-1 ml-1">
                 <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
                     <Image
                         src="/images/toilet1.png"
@@ -208,7 +208,7 @@ const PDP = () => {
                                 >
                                     <path
                                         d="M1 7.49437L6.00036 13.9887L16 1"
-                                        stroke="black"
+                                        stroke="#00ab7c"
                                         strokeOpacity="0.75"
                                         strokeWidth="2"
                                         strokeLinecap="round"

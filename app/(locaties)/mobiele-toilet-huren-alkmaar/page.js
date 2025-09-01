@@ -51,7 +51,10 @@ export default function Alkmaar() {
                 ]}
             />
 
-            <FullImg img="/images/bedrijf.jpg" alt="Alkmaar " />
+            <FullImg
+                img="/images/mobiel-toilet-huren-alkmaar.png"
+                alt="Alkmaar "
+            />
             <TextWithButtons
                 title="Mobiel toilet huren in Alkmaar"
                 text="Of je nu een evenement organiseert in het centrum, een bouwproject hebt in Oudorp of een feest in Koedijk: WC-Direct levert snel en betrouwbaar. Binnen 48 uur staat je mobiele toilet op locatie in Alkmaar of omgeving. Altijd schoon door wekelijkse reiniging en transparant in prijs.

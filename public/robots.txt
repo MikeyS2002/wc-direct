@@ -8,6 +8,7 @@ Allow: /
 User-agent: *
 Disallow: /api/
 Disallow: /_next/
+Disallow: /success
 
 # Sitemap location
 Sitemap: https://www.wc-direct.nl/sitemap.xml

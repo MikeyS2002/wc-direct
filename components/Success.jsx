@@ -3,7 +3,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-function SuccessContent() {
+function SuccessContent({ isQuoteRequest, sessionId, orderDetails }) {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
             <div className="max-w-md w-full bg-white shadow-lg rounded-lg p-8 text-center">
@@ -51,7 +51,7 @@ function SuccessContent() {
 
                 {(isQuoteRequest || !sessionId) && (
                     <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
-                        <h2 className="font-semibold mb-2 text-primary">
+                        <h2 className="font-semibold mb-2 text-blue-600">
                             Wat gebeurt er nu?
                         </h2>
                         <ul className="text-sm text-blue-700 text-left space-y-1">
@@ -134,6 +134,7 @@ const Success = () => {
             </div>
         );
     }
+
     return (
         <Suspense
             fallback={
@@ -145,7 +146,11 @@ const Success = () => {
                 </div>
             }
         >
-            <SuccessContent />
+            <SuccessContent
+                isQuoteRequest={isQuoteRequest}
+                sessionId={sessionId}
+                orderDetails={orderDetails}
+            />
         </Suspense>
     );
 };

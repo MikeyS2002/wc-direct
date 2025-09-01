@@ -47,7 +47,7 @@
         @apply text-[14px] md:text-[16px] tracking-[0.01em];
     }
     .button {
-        @apply py-4 px-8 rounded-lg text-[14px] md:text-[16px] tracking-[0.01em] text-white cursor-pointer;
+        @apply py-4 px-8 rounded-lg hover:!bg-[#028763] transition-colors text-[14px] md:text-[16px] tracking-[0.01em] text-white cursor-pointer;
     }
     .input {
         @apply block w-full px-10 py-5 rounded transition-all focus:outline-none bg-contrast disabled:cursor-not-allowed;

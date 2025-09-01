@@ -57,7 +57,7 @@ export default function Purmerend() {
             />
             <TextWithButtons
                 title="Mobiel toilet huren in Purmerend"
-                text="Op zoek naar een mobiel toilet in Purmerend of de Beemster? WC-Direct levert vaak binnen 48 uur en zorgt dat jouw toilet er al staat voordat het project of feest begint. Van bouwplaatsen in de Baanstee tot tuinfeesten in Weidevenne – wij regelen schoon sanitair, inclusief wekelijkse schoonmaak en transparante prijzen.<br /> <br />👉 Huur direct jouw mobiele toilet in Purmerend bij WC-Direct."
+                text="Op zoek naar een mobiel toilet in Purmerend of de Beemster? WC-Direct levert binnen 48 uur en zorgt dat jouw toilet er al staat voordat het project of feest begint. Van bouwplaatsen in de Baanstee tot tuinfeesten in Weidevenne – wij regelen schoon sanitair, inclusief wekelijkse schoonmaak en transparante prijzen.<br /> <br />👉 Huur direct jouw mobiele toilet in Purmerend bij WC-Direct."
             />
             {/* <SocialProof
                 title="We staan door heel Purmerend"

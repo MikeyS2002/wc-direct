@@ -56,7 +56,7 @@ export default function Hoorn() {
             />
             <TextWithButtons
                 title="Mobiel toilet huren in Hoorn"
-                text="Voor bouwplaatsen in Zwaag, evenementen aan de haven of een verbouwing in Blokker: WC-Direct levert schone mobiele toiletten in heel Hoorn en West-Friesland. Vaak binnen 48 uur geplaatst en altijd inclusief wekelijkse schoonmaak. Zo weet je zeker dat je sanitaire voorzieningen geregeld zijn, zonder verrassingen achteraf.
+                text="Voor bouwplaatsen in Zwaag, evenementen aan de haven of een verbouwing in Blokker: WC-Direct levert schone mobiele toiletten in heel Hoorn en West-Friesland. Binnen 48 uur geplaatst en altijd inclusief wekelijkse schoonmaak. Zo weet je zeker dat je sanitaire voorzieningen geregeld zijn, zonder verrassingen achteraf.
                 <br /><br />
                 👉 Huur nu eenvoudig een mobiel toilet in Hoorn bij WC-Direct."
             />

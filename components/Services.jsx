@@ -15,9 +15,9 @@ const Services = () => {
                     </div>
                     <p className="text-center">
                         Bij WC-Direct plannen we slim. We leveren je mobiele
-                        toilet altijd zo dat het er staat wanneer jij het nodig
-                        hebt – vaak binnen 48 uur. Voor bouwprojecten zorgen we
-                        dat het toilet al geplaatst is vóórdat je project start,
+                        toilet altijd zodat het er staat wanneer jij het nodig
+                        hebt – binnen 48 uur. Voor bouwprojecten zorgen we dat
+                        het toilet al geplaatst is vóórdat je project start,
                         zodat je direct aan de slag kunt.
                     </p>
                 </div>
@@ -38,7 +38,7 @@ const Services = () => {
                     <p className="text-center">
                         We houden het graag simpel: transparante prijzen, geen
                         verborgen kosten en je toilet op tijd. Vanaf €125 eerste
-                        week, daarna €40 per week (excl. BTW). Alles inclusief
+                        week, daarna €40 per week (excl. btw). Alles inclusief
                         levering, plaatsing en onderhoud.
                     </p>
                 </div>
@@ -49,7 +49,7 @@ const Services = () => {
                     slidesPerView={1}
                     loop={true}
                     autoplay={{
-                        delay: 3000,
+                        delay: 5000,
                     }}
                     modules={[Autoplay]}
                 >
@@ -60,9 +60,9 @@ const Services = () => {
                             </div>
                             <p className="text-center">
                                 Bij WC-Direct plannen we slim. We leveren je
-                                mobiele toilet altijd zo dat het er staat
-                                wanneer jij het nodig hebt – vaak binnen 48 uur.
-                                Voor bouwprojecten zorgen we dat het toilet al
+                                mobiele toilet altijd zodat het er staat wanneer
+                                jij het nodig hebt – binnen 48 uur. Voor
+                                bouwprojecten zorgen we dat het toilet al
                                 geplaatst is vóórdat je project start, zodat je
                                 direct aan de slag kunt.
                             </p>
@@ -90,8 +90,8 @@ const Services = () => {
                                 We houden het graag simpel: transparante
                                 prijzen, geen verborgen kosten en je toilet op
                                 tijd. Vanaf €125 eerste week, daarna €40 per
-                                week. Alles inclusief levering, plaatsing en
-                                onderhoud.
+                                week (excl. btw). Alles inclusief levering,
+                                plaatsing en onderhoud.
                             </p>
                         </div>
                     </SwiperSlide>

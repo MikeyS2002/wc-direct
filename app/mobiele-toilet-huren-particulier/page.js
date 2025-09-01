@@ -46,11 +46,11 @@ export default function Particulier() {
                 title="Mobiele toiletten voor particulieren – snel geregeld, altijd schoon"
                 text="Of je nu gaat verbouwen, een tuinfeest geeft of een groot familie-evenement organiseert – het is fijn als het sanitair goed geregeld is. Je wilt dat het op tijd geleverd wordt, schoon blijft en zonder gedoe weer wordt opgehaald.
 <br /><br />
-Bij WC-Direct zorgen we dat je daar geen omkijken naar hebt. We leveren vaak binnen 48 uur, zetten het toilet op de juiste plek en verzorgen wekelijks onderhoud. Zo weet je zeker dat alles fris en gebruiksklaar blijft, zolang jij het nodig hebt."
+Bij WC-Direct zorgen we dat je daar geen omkijken naar hebt. We leveren binnen 48 uur, zetten het toilet op de juiste plek en verzorgen wekelijks onderhoud. Zo weet je zeker dat alles fris en gebruiksklaar blijft, zolang jij het nodig hebt."
             />
             <Stats
                 stats={[
-                    "Snel geleverd: vaak binnen 48 uur op locatie.",
+                    "Snel geleverd: binnen 48 uur op locatie.",
                     "Altijd schoon: wekelijkse reiniging inbegrepen.",
                     "Eerlijke prijs: €125 eerste week, daarna €40 per week (excl. BTW).",
                     "Geen gedoe: levering, plaatsing en ophalen in één keer geregeld.",

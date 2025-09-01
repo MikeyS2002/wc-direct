@@ -6,7 +6,7 @@ import Services from "./Services";
 const Footer = () => {
     return (
         <>
-            <footer className="bg-black p-5 md:p-10  text-white md:flex justify-between">
+            <footer className="bg-black p-5 md:p-10 md:pb-20  text-white md:flex justify-between">
                 <div className="flex flex-col mb-10 md:mb-0 justify-between gap-5">
                     <p>WC-Direct</p>
                     <address className="not-italic">

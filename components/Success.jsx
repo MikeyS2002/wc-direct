@@ -85,7 +85,7 @@ function SuccessContent({ isQuoteRequest, sessionId, orderDetails }) {
     );
 }
 
-const Success = () => {
+function SuccessLogic() {
     const searchParams = useSearchParams();
     const sessionId = searchParams.get("session_id");
     const [orderDetails, setOrderDetails] = useState(null);
@@ -136,6 +136,16 @@ const Success = () => {
     }
 
     return (
+        <SuccessContent
+            isQuoteRequest={isQuoteRequest}
+            sessionId={sessionId}
+            orderDetails={orderDetails}
+        />
+    );
+}
+
+const Success = () => {
+    return (
         <Suspense
             fallback={
                 <div className="min-h-screen flex items-center justify-center">
@@ -146,11 +156,7 @@ const Success = () => {
                 </div>
             }
         >
-            <SuccessContent
-                isQuoteRequest={isQuoteRequest}
-                sessionId={sessionId}
-                orderDetails={orderDetails}
-            />
+            <SuccessLogic />
         </Suspense>
     );
 };

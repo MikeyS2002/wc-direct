@@ -17,13 +17,13 @@ const AnimatedHeader = ({ seoH1, words, text }) => {
         <header className="m-5 md:m-10 mt-20 md:mt-10" role="banner">
             <h1 className="sr-only">{seoH1}</h1>
             <div
-                className="h1 block md:w-[66%]"
+                className="h1 block md:w-[66%] text-balance"
                 aria-describedby="animated-words"
             >
                 {text}
             </div>
             <div
-                className="overflow-y-hidden relative h-[44px] md:h-[110px]"
+                className="overflow-y-hidden relative h-[44px] md:h-[110px] "
                 id="animated-words"
                 aria-live="polite"
                 aria-label="Roterende tekst showcase"

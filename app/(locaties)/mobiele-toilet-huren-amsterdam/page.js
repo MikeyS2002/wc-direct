@@ -2,16 +2,44 @@ import React from "react";
 
 import AnimatedHeader from "@/components/AnimatedHeader";
 import FullImg from "@/components/FullImg";
-import SideText from "@/components/SideText";
 import TextWithButtons from "@/components/TextWithButtons";
-import SocialProof from "@/components/SocialProof";
-import TextImage from "@/components/TextImage";
+
+export const metadata = {
+    title: "Mobiel toilet huren Amsterdam",
+    keywords: [
+        "mobiel toilet huren Amsterdam",
+        "toilet verhuur Amsterdam",
+        "dixi huren Amsterdam",
+        "sanitair huren Amsterdam centrum",
+        "mobiele toiletten Amsterdam-Noord",
+        "toilet huren NDSM",
+        "WC verhuur grachtengordel",
+        "mobiel toilet festival Amsterdam",
+        "sanitair verhuur Amsterdam",
+        "toilet huren bouwplaats Amsterdam",
+    ],
+    description:
+        "Mobiel toilet huren in Amsterdam? WC-Direct levert binnen 48 uur schone mobiele toiletten, ook in het centrum. Van Amsterdam-Noord tot de grachtengordel - altijd op tijd en gebruiksklaar.",
+    openGraph: {
+        images: [
+            {
+                url: "https://www.wc-direct.nl/images/diemen-huren-mobiel-toilet.png",
+                width: 1200,
+                height: 630,
+                alt: "Mobiel toilet huren in Amsterdam - WC-Direct",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.wc-direct.nl/mobiele-toilet-huren-amsterdam",
+    },
+};
 
 export default function Amsterdam() {
     return (
         <main>
             <AnimatedHeader
-                seoH1="Schoon sanitair in Amsterdam - Professionele mobiele toilleten"
+                seoH1="Schoon sanitair in Amsterdam - mobiele toilleten"
                 text="Schoon en fris sanitair in"
                 words={[
                     "Amsterdam",
@@ -22,42 +50,17 @@ export default function Amsterdam() {
                     "heel Noord-Holland",
                 ]}
             />
-            {/* <SideText
-                header="Sanitaire voorzieningen voor elk project"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            /> */}
-            <FullImg img="/images/bedrijf.jpg" alt="alt" />
+
+            <FullImg
+                img="/images/diemen-huren-mobiel-toilet.png"
+                alt="Amsterdam mobiel toilet huren"
+            />
             <TextWithButtons
                 title="Mobiel toilet huren in Amsterdam"
                 text="In een drukke stad als Amsterdam is timing alles. WC-Direct levert mobiele toiletten binnen 48 uur, ook in het centrum en de omliggende wijken. Of het nu gaat om een bouwproject in Amsterdam-Noord, een festival bij de NDSM-werf of een verbouwing in de grachtengordel – wij zorgen dat je sanitaire voorzieningen altijd op tijd, schoon en gebruiksklaar zijn.
                 <br /><br />
                 👉 Bestel nu jouw mobiele toilet in Amsterdam."
             />
-            {/* <SocialProof
-                title="We staan door heel Purmerend"
-                imgs={[
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                ]}
-            />
-
-            <TextImage
-                img="/images/bedrijf.jpg"
-                alt="alt"
-                mt
-                title="Wekelijkse reiniging"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
-            <TextImage
-                img="/images/particulier.jpg"
-                alt="alt"
-                reverse
-                mb
-                title="Snelle levering"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            /> */}
         </main>
     );
 }

@@ -1,5 +1,23 @@
 import React from "react";
-
+export const metadata = {
+    title: "Algemene voorwaarden",
+    keywords: [
+        "algemene voorwaarden WC-Direct",
+        "voorwaarden mobiele toilet verhuur",
+        "huurvoorwaarden toiletcabine",
+        "algemene voorwaarden toiletverhuur",
+        "voorwaarden WC verhuur",
+        "contractvoorwaarden mobiel toilet",
+        "huurcontract toiletcabine",
+        "voorwaarden sanitairverhuur",
+    ],
+    description:
+        "Lees hier de algemene voorwaarden van WC-Direct voor de verhuur van mobiele toiletten. Transparante afspraken over levering, prijzen, betalingsvoorwaarden en aansprakelijkheid.",
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 const AlgemeneVoorwaarden = () => {
     return (
         <main className="mx-5 md:mx-10 md:mt-[155px] mt-20 mb-10">

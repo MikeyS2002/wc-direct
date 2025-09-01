@@ -2,10 +2,38 @@ import React from "react";
 
 import AnimatedHeader from "@/components/AnimatedHeader";
 import FullImg from "@/components/FullImg";
-import SideText from "@/components/SideText";
 import TextWithButtons from "@/components/TextWithButtons";
-import SocialProof from "@/components/SocialProof";
-import TextImage from "@/components/TextImage";
+
+export const metadata = {
+    title: "Mobiel toilet huren Alkmaar | WC-Direct - Binnen 48 uur geleverd",
+    keywords: [
+        "mobiel toilet huren Alkmaar",
+        "toilet verhuur Alkmaar",
+        "dixi huren Alkmaar",
+        "sanitair huren Alkmaar centrum",
+        "mobiele toiletten Alkmaar",
+        "toilet huren Oudorp",
+        "WC verhuur Koedijk",
+        "mobiel toilet evenement Alkmaar",
+        "sanitair verhuur Noord-Holland",
+        "toilet huren bouwplaats Alkmaar",
+    ],
+    description:
+        "Mobiel toilet huren in Alkmaar? WC-Direct levert binnen 48 uur schone mobiele toiletten voor bouw en evenementen. Van centrum tot Oudorp en Koedijk - wekelijkse reiniging inbegrepen.",
+    openGraph: {
+        images: [
+            {
+                url: "https://www.wc-direct.nl/images/mobiel-toilet-huren-alkmaar.png",
+                width: 1200,
+                height: 630,
+                alt: "Mobiel toilet huren in Alkmaar - WC-Direct",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.wc-direct.nl/mobiele-toilet-huren-alkmaar",
+    },
+};
 
 export default function Alkmaar() {
     return (
@@ -22,42 +50,14 @@ export default function Alkmaar() {
                     "heel Noord-Holland",
                 ]}
             />
-            {/* <SideText
-                header="Sanitaire voorzieningen voor elk project"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            /> */}
-            <FullImg img="/images/bedrijf.jpg" alt="alt" />
+
+            <FullImg img="/images/bedrijf.jpg" alt="Alkmaar " />
             <TextWithButtons
                 title="Mobiel toilet huren in Alkmaar"
                 text="Of je nu een evenement organiseert in het centrum, een bouwproject hebt in Oudorp of een feest in Koedijk: WC-Direct levert snel en betrouwbaar. Binnen 48 uur staat je mobiele toilet op locatie in Alkmaar of omgeving. Altijd schoon door wekelijkse reiniging en transparant in prijs.
                 <br /><br />
                 👉 Vraag vandaag nog een offerte aan voor een mobiel toilet in Alkmaar."
             />
-            {/* <SocialProof
-                title="We staan door heel Purmerend"
-                imgs={[
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                    { img: "/images/bedrijf.jpg", alt: "alt" },
-                ]}
-            /> */}
-
-            {/* <TextImage
-                img="/images/bedrijf.jpg"
-                alt="alt"
-                mt
-                title="Wekelijkse reiniging"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
-            <TextImage
-                img="/images/particulier.jpg"
-                alt="alt"
-                reverse
-                mb
-                title="Snelle levering"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            /> */}
         </main>
     );
 }

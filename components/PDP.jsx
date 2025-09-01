@@ -72,14 +72,14 @@ const PDP = () => {
 
     return (
         <section className="lg:flex">
-            <div className="w-full flex overflow-x-scroll flex-nowrap lg:grid lg:grid-cols-2 gap-1 h-fit mt-1 ml-1">
+            <div className="w-full sticky top-1 flex overflow-x-scroll flex-nowrap lg:grid lg:grid-cols-2 gap-1 h-fit mt-1 ml-1">
                 <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
                     <Image
                         src="/images/toilet1.png"
                         alt="alt"
-                        width={300}
-                        height={500}
-                        className="w-full h-full object-contain xl:px-30 xl:p-20 p-10"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
                         priority
                         itemProp="image"
                     />
@@ -88,18 +88,27 @@ const PDP = () => {
                     <Image
                         src="/images/toilet2.png"
                         alt="alt"
-                        width={300}
-                        height={500}
-                        className="w-full h-full object-contain xl:px-30 xl:p-20 p-10"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
                     />
                 </div>
                 <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
                     <Image
                         src="/images/toilet3.png"
                         alt="alt"
-                        width={300}
-                        height={500}
-                        className="w-full h-full object-contain xl:px-30 xl:p-20 p-10"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+                <div className="lg:min-w-full min-w-[80vw] lg:w-full aspect-square bg-contrast flex-shrink-0">
+                    <Image
+                        src="/images/toilet4.png"
+                        alt="alt"
+                        width={600}
+                        height={600}
+                        className="w-full h-full object-cover"
                     />
                 </div>
             </div>

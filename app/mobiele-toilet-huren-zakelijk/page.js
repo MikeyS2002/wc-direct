@@ -22,7 +22,7 @@ export const metadata = {
     openGraph: {
         images: [
             {
-                url: "https://www.jouwdomein.nl/og/bedrijf.jpg",
+                url: "https://www.jouwdomein.nl/images/mobiel-toilet-huren-purmerend-verbouwing.png",
                 width: 1200,
                 height: 630,
                 alt: "Contact WC-Direct",
@@ -39,7 +39,7 @@ export default function Zakelijk() {
         <main>
             <Header
                 text="Mobiele toiletten voor bedrijven"
-                img="/images/bedrijf.jpg"
+                img="/images/mobiel-toilet-huren-purmerend-verbouwing.png"
                 alt="alt"
             />
             <TextWithButtons

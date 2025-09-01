@@ -6,7 +6,7 @@ const Blocks = () => {
     const services = [
         {
             href: "/mobiele-toilet",
-            imageSrc: "/images/bedrijf.jpg",
+            imageSrc: "/images/mobiel-toilet-huren-purmerend-verbouwing.png",
             imageAlt:
                 "Mobiele toilet verhuur voor bedrijven - professionele sanitaire voorzieningen op bouwplaatsen",
             title: "Mobiele Toilet Verhuur voor Bedrijven",
@@ -16,7 +16,7 @@ const Blocks = () => {
         },
         {
             href: "/mobiele-toilet",
-            imageSrc: "/images/particulier.jpg",
+            imageSrc: "/images/particulier-mobiel-toilet-huren.png",
             imageAlt:
                 "Mobiele toilet verhuur voor particulieren - schone toiletten voor tuinfeesten en evenementen",
             title: "Mobiele Toilet Verhuur voor Particulieren",
@@ -45,7 +45,7 @@ const Blocks = () => {
                         className="block rounded-lg"
                         aria-label={`${service.title} - ${service.description}`}
                     >
-                        <div className="aspect-video w-full overflow-hidden bg-contrast">
+                        <div className="aspect-[16/11] w-full overflow-hidden bg-contrast">
                             <Image
                                 src={service.imageSrc}
                                 alt={service.imageAlt}

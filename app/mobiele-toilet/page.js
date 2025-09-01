@@ -5,6 +5,63 @@ import TextImage from "@/components/TextImage";
 import FAQ from "@/components/FAQ";
 import Services from "@/components/Services";
 
+export const metadata = {
+    title: "Mobiele toilet huren vanaf €125",
+    keywords: [
+        "mobiele toilet huren",
+        "mobiel toilet verhuur",
+        "dixi huren",
+        "toilet verhuur prijzen",
+        "mobiel toilet €125",
+        "toiletcabine verhuur",
+        "sanitair verhuur",
+        "mobiele toilet schoonmaak",
+        "toilet huren wekelijks onderhoud",
+        "WC verhuur Noord-Holland",
+    ],
+    description:
+        "Huur een mobiele toilet vanaf €125 de eerste week bij WC-Direct. Inclusief wekelijkse schoonmaak, snelle levering en ophaalservice. Geschikt voor 10-15 personen per week.",
+    openGraph: {
+        images: [
+            {
+                url: "https://www.wc-direct.nl/images/toilet1.png",
+                width: 1200,
+                height: 630,
+                alt: "Mobiele toilet huren - WC-Direct",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.wc-direct.nl/mobiele-toilet",
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+    structured_data: {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        name: "Mobiele Toilet Verhuur",
+        description:
+            "Mobiele toiletcabine verhuur inclusief wekelijkse schoonmaak en onderhoud",
+        brand: {
+            "@type": "Brand",
+            name: "WC-Direct",
+        },
+        offers: {
+            "@type": "Offer",
+            price: "125",
+            priceCurrency: "EUR",
+            priceValidUntil: "2025-12-31",
+            availability: "https://schema.org/InStock",
+            seller: {
+                "@type": "Organization",
+                name: "WC-Direct VOF",
+            },
+        },
+    },
+};
+
 export default function MobieleToilet() {
     const questions = [
         {

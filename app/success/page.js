@@ -4,6 +4,21 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
+export const metadata = {
+    title: "Bedankt voor uw bestelling!",
+
+    description:
+        "Bedankt voor uw bestelling of offerte aanvraag bij WC-Direct. U ontvangt binnenkort een bevestiging per e-mail. Wij nemen binnen 24 uur contact met u op.",
+
+    alternates: {
+        canonical: "https://www.wc-direct.nl/success",
+    },
+    robots: {
+        index: false,
+        follow: false,
+    },
+};
+
 function SuccessContent() {
     const searchParams = useSearchParams();
     const sessionId = searchParams.get("session_id");

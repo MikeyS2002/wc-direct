@@ -2,16 +2,44 @@ import React from "react";
 
 import AnimatedHeader from "@/components/AnimatedHeader";
 import FullImg from "@/components/FullImg";
-import SideText from "@/components/SideText";
 import TextWithButtons from "@/components/TextWithButtons";
-import SocialProof from "@/components/SocialProof";
-import TextImage from "@/components/TextImage";
+
+export const metadata = {
+    title: "Mobiel toilet huren Zaandam",
+    keywords: [
+        "mobiel toilet huren Zaandam",
+        "toilet verhuur Zaandam",
+        "dixi huren Zaandam",
+        "sanitair huren Zaanstreek",
+        "mobiele toiletten Zaandam",
+        "toilet huren Kogerveld",
+        "WC verhuur Zaandam",
+        "mobiel toilet Amsterdam Noord",
+        "sanitair verhuur Noord-Holland",
+        "toilet huren bouwplaats Zaandam",
+    ],
+    description:
+        "Mobiel toilet huren in Zaandam en de Zaanstreek? WC-Direct levert binnen 48 uur schone mobiele toiletten voor bouw en evenementen. Wekelijks onderhoud en transparante prijzen vanaf €150.",
+    openGraph: {
+        images: [
+            {
+                url: "https://www.wc-direct.nl/images/zaandam-toilet-huren.png",
+                width: 1200,
+                height: 630,
+                alt: "Mobiel toilet huren in Zaandam - WC-Direct",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.wc-direct.nl/mobiele-toilet-huren-zaandam",
+    },
+};
 
 export default function Zaandam() {
     return (
         <main>
             <AnimatedHeader
-                seoH1="Schoon sanitair in Zaandam - Professionele mobiele toilleten"
+                seoH1="Schoon sanitair in Zaandam - mobiele toilleten"
                 text="Schoon en fris sanitair in"
                 words={[
                     "Zaandam",
@@ -22,11 +50,10 @@ export default function Zaandam() {
                     "heel Noord-Holland",
                 ]}
             />
-            {/* <SideText
-                header="Sanitaire voorzieningen voor elk project"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            /> */}
-            <FullImg img="/images/bedrijf.jpg" alt="alt" />
+            <FullImg
+                img="/images/zaandam-toilet-huren.png"
+                alt="Zaandam mobiel toilet huren"
+            />
             <TextWithButtons
                 title="Mobiel toilet huren in Zaandam"
                 text="Van bouwprojecten langs de Zaan tot buurtfeesten in Kogerveld – WC-Direct levert snel en betrouwbaar mobiele toiletten in Zaandam en de hele Zaanstreek. Binnen 48 uur op locatie, schoon en wekelijks onderhouden. Ideaal voor zowel bouw, evenementen als particuliere verhuur.
@@ -41,22 +68,6 @@ export default function Zaandam() {
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                     { img: "/images/bedrijf.jpg", alt: "alt" },
                 ]}
-            /> */}
-
-            {/* <TextImage
-                img="/images/bedrijf.jpg"
-                alt="alt"
-                mt
-                title="Wekelijkse reiniging"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
-            />
-            <TextImage
-                img="/images/particulier.jpg"
-                alt="alt"
-                reverse
-                mb
-                title="Snelle levering"
-                text="Van bouwplaatsen tot bruiloften - wij leveren schone, betrouwbare mobiele toiletten waar u ze nodig heeft. Slechts €150 eerste week, daarna €50 per week inclusief wekelijkse schoonmaak."
             /> */}
         </main>
     );

@@ -25,7 +25,7 @@ export const metadata = {
         type: "website",
         images: [
             {
-                url: "https://www.jouwdomein.nl/og/contact.jpg",
+                url: "https://www.jouwdomein.nl/og/mobiele-toilet-bouw-huren.png",
                 width: 1200,
                 height: 630,
                 alt: "Contact WC-Direct",

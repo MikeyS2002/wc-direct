@@ -11,7 +11,7 @@ const Services = () => {
             <section className="hidden grid-cols-3 gap-5 mb-10 mt-20 md:mt-40 md:grid md:px-10">
                 <div className="p-10 bg-contrast">
                     <div className="flex gap-[6px] items-center justify-center mb-10">
-                        <h3 className="h2">Snelle levering</h3>
+                        <h3 className="h2 text-center">Snelle levering</h3>
                     </div>
                     <p className="text-center">
                         Bij WC-Direct plannen we slim. We leveren je mobiele
@@ -23,7 +23,7 @@ const Services = () => {
                 </div>
                 <div className="p-10 bg-contrast">
                     <div className="flex gap-[6px] items-center justify-center mb-10">
-                        <h3 className="h2">Wekelijkse reiniging</h3>
+                        <h3 className="h2 text-center">Wekelijkse reiniging</h3>
                     </div>
                     <p className="text-center">
                         Hygiëne staat bij ons voorop. We reinigen jouw toilet
@@ -33,7 +33,7 @@ const Services = () => {
                 </div>
                 <div className="p-10 bg-contrast">
                     <div className="flex gap-[6px] items-center justify-center mb-10">
-                        <h3 className="h2">Transparantie</h3>
+                        <h3 className="h2 text-center">Transparantie</h3>
                     </div>
                     <p className="text-center">
                         We houden het graag simpel: transparante prijzen, geen
@@ -56,7 +56,9 @@ const Services = () => {
                     <SwiperSlide>
                         <div className="p-10 mx-4 bg-contrast">
                             <div className="flex gap-[6px] items-center justify-center mb-4">
-                                <h3 className="h2">Snelle levering</h3>
+                                <h3 className="h2 text-center">
+                                    Snelle levering
+                                </h3>
                             </div>
                             <p className="text-center">
                                 Bij WC-Direct plannen we slim. We leveren je
@@ -71,7 +73,9 @@ const Services = () => {
                     <SwiperSlide>
                         <div className="p-10 mx-4 bg-contrast">
                             <div className="flex gap-[6px] items-center justify-center mb-4">
-                                <h3 className="h2">Wekelijkse reiniging</h3>
+                                <h3 className="h2 text-center">
+                                    Wekelijkse reiniging
+                                </h3>
                             </div>
                             <p className="text-center">
                                 Hygiëne staat bij ons voorop. We reinigen jouw
@@ -84,7 +88,9 @@ const Services = () => {
                     <SwiperSlide>
                         <div className="p-10 mx-4 bg-contrast">
                             <div className="flex gap-[6px] items-center justify-center mb-4">
-                                <h3 className="h2">Transparantie</h3>
+                                <h3 className="h2 text-center">
+                                    Transparantie
+                                </h3>
                             </div>
                             <p className="text-center">
                                 We houden het graag simpel: transparante

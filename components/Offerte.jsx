@@ -323,7 +323,7 @@ const Offerte = () => {
 
     return (
         <>
-            <main className="grid h-[100lvh] md:grid-cols-2 relative">
+            <main className="grid md:h-[100lvh] md:grid-cols-2 relative">
                 <div className="mx-5 md:mx-10 mt-20 md:mt-10 flex flex-col md:sticky top-10 h-fit">
                     <div className="space-y-2">
                         <h1 className="h4 mb-10">Uw gegevens</h1>
@@ -504,8 +504,8 @@ const Offerte = () => {
                                 ? "ten"
                                 : ""}
                             {calculateWeeks() > 0
-                                ? ` - ${calculateWeeks()} week${
-                                      calculateWeeks() !== 1 ? "s" : ""
+                                ? ` - ${calculateWeeks()} ${
+                                      calculateWeeks() !== 1 ? "weken" : "week"
                                   }`
                                 : ""}
                         </h3>
@@ -524,17 +524,17 @@ const Offerte = () => {
                             </button>
                         )}
 
-                        <button
-                            className={`${
-                                shouldShowDirectPayment()
-                                    ? "bg-black/10 text-black "
-                                    : "bg-black"
-                            } button w-full disabled:opacity-50 disabled:cursor-not-allowed`}
-                            onClick={() => handleSubmit("offerte")}
-                            disabled={isLoading || isStripeLoading}
-                        >
-                            {isLoading ? "Bezig..." : "Vraag een offerte aan"}
-                        </button>
+                        {!shouldShowDirectPayment() && (
+                            <button
+                                className={`bg-black button w-full disabled:opacity-50 disabled:cursor-not-allowed`}
+                                onClick={() => handleSubmit("offerte")}
+                                disabled={isLoading || isStripeLoading}
+                            >
+                                {isLoading
+                                    ? "Bezig..."
+                                    : "Vraag een offerte aan"}
+                            </button>
+                        )}
 
                         {submitStatus && (
                             <div

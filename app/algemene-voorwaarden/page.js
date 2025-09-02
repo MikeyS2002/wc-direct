@@ -219,7 +219,7 @@ const AlgemeneVoorwaarden = () => {
             </ul>
             <p className="opacity-50 mt-10">
                 WC-Direct VOF | www.wc-direct.nl | info@wc-direct.nl |
-                0634124702 KvK: 97448761 | BTW: NL868055487B01 | IBAN:
+                0634124702 KvK: 97448761 | btw: NL868055487B01 | IBAN:
                 NL66INGB0114462712
             </p>
         </main>

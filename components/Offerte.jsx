@@ -569,7 +569,7 @@ const Offerte = () => {
                             </h3>
                             {shouldShowPrice() && (
                                 <small className="opacity-50 mb-1">
-                                    exclusief BTW
+                                    exclusief btw
                                 </small>
                             )}
                         </div>

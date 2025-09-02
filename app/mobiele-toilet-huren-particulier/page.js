@@ -52,7 +52,7 @@ Bij WC-Direct zorgen we dat je daar geen omkijken naar hebt. We leveren binnen 4
                 stats={[
                     "Snel geleverd: binnen 48 uur op locatie.",
                     "Altijd schoon: wekelijkse reiniging inbegrepen.",
-                    "Eerlijke prijs: €125 eerste week, daarna €40 per week (excl. BTW).",
+                    "Eerlijke prijs: €125 eerste week, daarna €40 per week (excl. btw).",
                     "Geen gedoe: levering, plaatsing en ophalen in één keer geregeld.",
                     "Flexibel huren: zolang als je verbouwing, feest of project duurt.",
                 ]}

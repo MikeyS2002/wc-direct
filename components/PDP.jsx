@@ -120,7 +120,7 @@ const PDP = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Bekijk onze Google reviews - opent in nieuw tabblad"
-                    href="https://www.google.com/search?sa=X&sca_esv=e636a3bf86a437ec&tbm=lcl&sxsrf=AE3TifP23YWI1qUM_zje1TbWZMrtnE1zjw:1750749465812&q=Dryve+Verhuur+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDY0MTcxNzW2MDYyMDCzsDS0MN3AyPiKUdSlqLIsVSEstSijtLRIISi1LDO1vHgRK3ZxAI2ESJJLAAAA&rldimm=13147475383200689185&hl=nl-NL&ved=2ahUKEwj9oICAwomOAxUh1gIHHbr-COcQ9fQKegQISBAF&biw=1492&bih=924&dpr=2#lkt=LocalPoiReviews"
+                    // href="https://www.google.com/search?sa=X&sca_esv=e636a3bf86a437ec&tbm=lcl&sxsrf=AE3TifP23YWI1qUM_zje1TbWZMrtnE1zjw:1750749465812&q=Dryve+Verhuur+Reviews&rflfq=1&num=20&stick=H4sIAAAAAAAAAONgkxIxNDY0MTcxNzW2MDYyMDCzsDS0MN3AyPiKUdSlqLIsVSEstSijtLRIISi1LDO1vHgRK3ZxAI2ESJJLAAAA&rldimm=13147475383200689185&hl=nl-NL&ved=2ahUKEwj9oICAwomOAxUh1gIHHbr-COcQ9fQKegQISBAF&biw=1492&bih=924&dpr=2#lkt=LocalPoiReviews"
                 >
                     <div
                         className="flex gap-px"
@@ -177,7 +177,7 @@ const PDP = () => {
                         eerste week
                     </p>
                     <p>€40 vervolgweken</p>
-                    <p className="opacity-50">(excl. BTW)</p>
+                    <p className="opacity-50">(excl. btw)</p>
                 </div>
                 <Link href="/bestellen">
                     <button
@@ -185,7 +185,7 @@ const PDP = () => {
                         type="button"
                         aria-label="Bestel nu mobiele toilet"
                     >
-                        Bestel Mobiele Toilet
+                        Bestel jouw mobiele toilet
                     </button>
                 </Link>
 

@@ -13,7 +13,7 @@ const Footer = () => {
                         <div className="space-y-1">
                             <div>
                                 <span>KvK:</span>
-                                <span className="ml-1">92591558</span>
+                                <span className="ml-1">97448761</span>
                             </div>
                             <div>
                                 <span>Telefoon:</span>

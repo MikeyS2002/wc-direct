@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-import Services from "./Services";
-
 const Footer = () => {
     return (
         <>

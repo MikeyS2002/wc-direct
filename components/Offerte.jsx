@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/style.css";
 import { nl } from "react-day-picker/locale";
@@ -14,12 +15,15 @@ const stripePromise = loadStripe(
 );
 
 const Offerte = () => {
+    const searchParams = useSearchParams();
+    const typeFromUrl = searchParams.get("type");
+
     const [selected, setSelected] = useState();
     const [showDatePicker, setShowDatePicker] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isStripeLoading, setIsStripeLoading] = useState(false);
     const [formData, setFormData] = useState({
-        type: "",
+        type: typeFromUrl || "",
         naam: "",
         email: "",
         aantal: "",
@@ -77,7 +81,7 @@ const Offerte = () => {
         const weeks = calculateWeeks();
         if (weeks === 0) return 0;
         if (weeks === 1) return 125;
-        return 125 + (weeks - 1) * 40;
+        return 125 + (weeks - 1) * 50;
     };
 
     const calculateTotal = () => {
@@ -87,8 +91,9 @@ const Offerte = () => {
     };
 
     const shouldShowPrice = () => {
+        // Alleen prijs tonen voor particulieren met minder dan 10 toiletten
         const aantal = parseInt(formData.aantal) || 0;
-        return aantal < 10;
+        return formData.type === "particulier" && aantal < 10;
     };
 
     const shouldShowDirectPayment = () => {
@@ -272,7 +277,7 @@ const Offerte = () => {
                 ...formData,
                 van: selected.from.toISOString(),
                 tot: selected.to ? selected.to.toISOString() : null,
-                prijs: shouldShowPrice() ? calculateTotal() : null, // Don't send price if 10+ toilets
+                prijs: shouldShowPrice() ? calculateTotal() : null, // Don't send price if business or 10+ toilets
                 opmerking: formData.opmerking || "",
             };
 
@@ -320,6 +325,18 @@ const Offerte = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, []);
+
+    const getPriceDisplay = () => {
+        if (!formData.type) return ""; // Geen prijs tonen als type niet geselecteerd
+        if (formData.type === "bedrijf") return "Prijs op aanvraag";
+        if (formData.type === "particulier") {
+            const aantal = parseInt(formData.aantal) || 0;
+            if (aantal >= 10) return "Prijs op aanvraag";
+            const total = calculateTotal();
+            return total > 0 ? `€${total}` : "";
+        }
+        return "";
+    };
 
     return (
         <>
@@ -492,24 +509,24 @@ const Offerte = () => {
                         </div>
                     </div>
 
-                    <div className="border-t md:hidden border-t-black flex mt-10 pt-5 justify-between">
-                        <h3 className="h2">
-                            {shouldShowPrice()
-                                ? `€${calculateTotal()}`
-                                : "Prijs op aanvraag"}
-                        </h3>
-                        <h3 className="">
-                            {formData.aantal || 0} toilet
-                            {(parseInt(formData.aantal) || 0) !== 1
-                                ? "ten"
-                                : ""}
-                            {calculateWeeks() > 0
-                                ? ` - ${calculateWeeks()} ${
-                                      calculateWeeks() !== 1 ? "weken" : "week"
-                                  }`
-                                : ""}
-                        </h3>
-                    </div>
+                    {formData.type && (
+                        <div className="border-t md:hidden border-t-black flex mt-10 pt-5 justify-between">
+                            <h3 className="h2">{getPriceDisplay()}</h3>
+                            <h3 className="">
+                                {formData.aantal || 0} toilet
+                                {(parseInt(formData.aantal) || 0) !== 1
+                                    ? "ten"
+                                    : ""}
+                                {calculateWeeks() > 0
+                                    ? ` - ${calculateWeeks()} ${
+                                          calculateWeeks() !== 1
+                                              ? "weken"
+                                              : "week"
+                                      }`
+                                    : ""}
+                            </h3>
+                        </div>
+                    )}
 
                     <div className="space-y-2 mt-10">
                         {shouldShowDirectPayment() && (
@@ -560,31 +577,31 @@ const Offerte = () => {
                             className=""
                         />
                     </div>
-                    <div className="border-t border-t-black flex mb-5 md:mb-10 pt-4 justify-between">
-                        <div className="flex items-end gap-2">
-                            <h3 className="h2">
-                                {shouldShowPrice()
-                                    ? `€${calculateTotal()}`
-                                    : "Prijs op aanvraag"}
+                    {formData.type && (
+                        <div className="border-t border-t-black flex mb-5 md:mb-10 pt-4 justify-between">
+                            <div className="flex items-end gap-2">
+                                <h3 className="h2">{getPriceDisplay()}</h3>
+                                {shouldShowPrice() && getPriceDisplay() && (
+                                    <small className="opacity-50 mb-1">
+                                        inclusief btw
+                                    </small>
+                                )}
+                            </div>
+                            <h3 className="h3 opacity-50">
+                                {formData.aantal || 0} toilet
+                                {(parseInt(formData.aantal) || 0) !== 1
+                                    ? "ten"
+                                    : ""}
+                                {calculateWeeks() > 0
+                                    ? ` - ${calculateWeeks()} ${
+                                          calculateWeeks() !== 1
+                                              ? "weken"
+                                              : "week"
+                                      }`
+                                    : ""}
                             </h3>
-                            {shouldShowPrice() && (
-                                <small className="opacity-50 mb-1">
-                                    exclusief btw
-                                </small>
-                            )}
                         </div>
-                        <h3 className="h3 opacity-50">
-                            {formData.aantal || 0} toilet
-                            {(parseInt(formData.aantal) || 0) !== 1
-                                ? "ten"
-                                : ""}
-                            {calculateWeeks() > 0
-                                ? ` - ${calculateWeeks()} ${
-                                      calculateWeeks() !== 1 ? "weken" : "week"
-                                  }`
-                                : ""}
-                        </h3>
-                    </div>
+                    )}
                 </div>
             </main>
             <Services />

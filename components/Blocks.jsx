@@ -5,7 +5,7 @@ import Link from "next/link";
 const Blocks = () => {
     const services = [
         {
-            href: "/mobiele-toilet",
+            href: "/bestellen?type=bedrijf",
             imageSrc: "/images/mobiel-toilet-huren-purmerend-verbouwing.png",
             imageAlt:
                 "Mobiele toilet verhuur voor bedrijven - professionele sanitaire voorzieningen op bouwplaatsen",
@@ -15,7 +15,7 @@ const Blocks = () => {
             cta: "Bestel direct",
         },
         {
-            href: "/mobiele-toilet",
+            href: "/bestellen?type=particulier",
             imageSrc: "/images/particulier-mobiel-toilet-huren.png",
             imageAlt:
                 "Mobiele toilet verhuur voor particulieren - schone toiletten voor tuinfeesten en evenementen",
@@ -55,7 +55,7 @@ const Blocks = () => {
                                 priority={index === 0}
                             />
                         </div>
-                        <div className="md:flex justify-between mt-2">
+                        <div className="flex justify-between mt-2">
                             <div className="flex-1">
                                 <h3 className="h2">
                                     {service.title
@@ -64,7 +64,7 @@ const Blocks = () => {
                                         .join(" ")}
                                 </h3>
                             </div>
-                            <div className="md:block hidden">
+                            <div>
                                 <button className="cursor-pointer button bg-primary h-fit">
                                     {service.cta}
                                 </button>

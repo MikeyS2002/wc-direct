@@ -176,8 +176,8 @@ const PDP = () => {
                         </span>{" "}
                         eerste week
                     </p>
-                    <p>€40 vervolgweken</p>
-                    <p className="opacity-50">(excl. btw)</p>
+                    <p>€50 vervolgweken</p>
+                    <p className="opacity-50">(incl. btw)</p>
                 </div>
                 <Link href="/bestellen">
                     <button

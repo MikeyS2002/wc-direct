@@ -1,5 +1,5 @@
 import Offerte from "@/components/Offerte";
-import React from "react";
+import React, { Suspense } from "react";
 
 export const metadata = {
     title: "Mobiel toilet bestellen",
@@ -23,5 +23,9 @@ export const metadata = {
 };
 
 export default function Bestellen() {
-    return <Offerte />;
+    return (
+        <Suspense fallback={<div className="p-10">Laden...</div>}>
+            <Offerte />
+        </Suspense>
+    );
 }

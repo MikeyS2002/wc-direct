@@ -11,7 +11,7 @@
   "dependencies": {
     "@stripe/stripe-js": "^7.6.1",
     "framer-motion": "^12.18.1",
-    "next": "15.3.4",
+    "next": "15.3.8",
     "nodemailer": "^7.0.3",
     "react": "^19.0.0",
     "react-day-picker": "^9.7.0",
